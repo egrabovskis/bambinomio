@@ -1,8 +1,163 @@
 <!DOCTYPE html>
 <html>
-<title>bambinomio.lv</title>
-Bio Sairstošās salvetes
- <img src="../img/tiramaisl.jpg">
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../lib/w3.css">
+<body class="w3-container">
+  <div id="tiramaisl" class="w3-padding-large"></div>
 
+  <style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Set a style for all buttons */
+    button {
+        background-color: hsl(280, 50%, 60%);
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+    button:hover {
+        opacity: 1;
+    }
+
+
+
+    /* Add padding and center-align text to the container */
+    .container {
+        padding: 16px;
+        text-align: center;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: #ffffff;
+        padding-top: 50px;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #f9edfc;
+        margin: 5% auto 15% auto;
+        /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid rgb(215, 183, 221);
+        width: 80%;
+        /* Could be more or less, depending on screen size */
+    }
+
+    /* Style the horizontal ruler */
+    hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+    }
+
+    /* The Modal Close Button (x) */
+    .close {
+        position: absolute;
+        right: 35px;
+        top: 15px;
+        font-size: 40px;
+        font-weight: bold;
+        color: #f1f1f1;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #ff1100;
+        cursor: pointer;
+    }
+
+    /* Clear floats */
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    }
+
+    .tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+</style>
+
+<body>
+  <h2 style="text-align:center">Piederumi</h2>
+
+<div class="card">
+  
+  <h1>BAMBINO MIO Care Washing Powder – veļas pulveris (800g)</h1>
+<img src="assets/img/musilin.jpg" alt="drāniņas" style="width:30%">
+  <p class="price">$9.99</p>
+  <div>
+    <p>jauns veļas pulveris kā lieliska alternatīva citiem veļas pulveriem</P>
+    hipoalerģisks un enzīmus nesaturošs, īpaši draudzīgs jūsu mazuļa maigajai ādai</p>
+    ekonomiskāks par visiem vadošajiem veļas pulveru zīmoliem</p>
+    pilnībā biosairstošs un atbilst ES normatīvu augstiem standartiem</p. nesatur hlora balinātāja reaģentus un garantē
+      minimālu ietekmi uz vidi </p>
+    satur dabisku lavandas aromātu</p>
+    </p>
+  </div>
+
+<button onclick="document.getElementById('id01').style.display='block'">Veikt pasūtījumu</button>
+
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×Aizvērt</span>
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h3>Pasūtījumu ir iespējams veikt pa e-pastu ege.studija@gmail.com norādot sekojošo:</h3>
+      Kontakttālrunis:<br>
+      preces nosaukums:Mio Fresh-autiņu tīrāmais līdzeklis<br>
+      preces daudzums:<br>
+      vēlamais piegādes veids:(omniva, dpd, lp, rīgā iespējama piegāde uz mājām)<br>
+      <p>Vienas dienas laikā saņemsiet uz epastu priekšapmaksas rēķinu. Pēc rēķina apmaksas pasūtījums
+        tiks apstrādāts un nosūtīts ar jūsu norādīto piegādes veidu.</p>
+      <h6>Vairāk informāciju par piemērotāko preci vai jebkādām neskaidrībām iespējams iegūt pa tālruni
+        26415513 vai rakstot uz e-pastu ege.studija@gmail.com</h6>
+
+</div>
+
+    </div>
+   
+
+    <script>
+      // Get the modal
+      var modal = document.getElementById('id01');
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script>
+</div>
 </body>
+
 </html>

@@ -1,8 +1,92 @@
 <!DOCTYPE html>
 <html>
-<title>bambinomio.lv</title>
-Aizsargpalags matracim
- <img src="../img/palags.jfif">
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<head>
+<script src="/lib/w3.js"></script>
+<body>
+
+<div w3-include-HTML="index.html"></div>
+<div w3-include-HTML="index.html"></div>
+
+<script>
+w3.includeHTML();
+</script>
+<style>}
+
+.price {
+  color: rgb(255, 255, 255);
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 30px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+</style>
+</head>
+<body>
+
+<div class="w3-container w3-black">
+  <h1>Mio Fresh-autiņu tīrāmais līdzeklis</h1>
+</div>
+
+<img src="assets/img/tiramaisl.jpg" alt="Car" style="width:50%">
+<p style="text-align:center" class="price">$14.99</p>
+
+<div class="w3-container">
+  <p>Mio Fresh:<br>
+*autiņu tīrāmais līdzeklis<br>
+*tas ir pirmais lietotājam un videi nekaitīgs, biosairstošs autiņu tīrāmais līdzeklis<br>
+*tā antibakteriālā, baktericīdā iedarbība mazgāšanas laikā iztīra, atsvaidzina un aromatizē autiņus, kā arī mazina nepieciešamību mazgāt tos karstā ūdenī vai mērcēt<br>
+*biosairstošs<br>
+*nesatur enzīmus, sintētiskas smaržvielas, hlora balinātājus, krāsvielas<br>
+*iepakojuma 750 g</p>
+</div>
+
+<div class="w3-container w3-black">
+
+
+<div class="card">
+
+<button class="open-button" onclick="openForm()">Pasūtīt</button>
+
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Pasūtījumu iespējams veikt pa epastu: ege.studija@gmail.com. 1dienas laikā pēc pasūtījuma veikšanas saņemsiet e-pastu ar priekšapmaksas rēķinu</h1>
+    Mio Fresh-autiņu tīrāmais līdzeklis<br>
+	Daudzums:<br>
+	Vēlamais piegādes veids:Rīgā iespējama piegāde. Ārpus rīgas piegāde ar pakomātiem
+	
+	
+	
+
+   
+    <button type="button" class="btn cancel" onclick="closeForm()">Aizvērt</button>
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
 
 </body>
 </html>
