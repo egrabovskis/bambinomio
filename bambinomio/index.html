@@ -3,21 +3,25 @@
 
 <head>
   <title>bambinomio.lv</title>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <script src="assets/js/includeHTML.js"></script>
-  <script src="assets/js/gallery.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- css -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="./assets/css/bambino.color.themes.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/css/gallery.css" /> 
+  <!-- <link rel="stylesheet" type="text/css" href="./assets/css/style.css" /> -->
+  <style>
+    body {
+      background-color: #f1f1fa;
+    }
+  </style>
 
+  <!-- javascript -->
+  <script src="assets/js/includeHTML.js"></script>
+  <script src="assets/js/gallery.js"></script>
 </head>
-<style>
-  body {
-    background-color: #f1f1fa;
-  }
-</style>
+
 
 <body>
 
@@ -33,19 +37,27 @@
       </div>
       <div class="w3-container w3-threequarter ">
         <ul class="w3-ul w3-center ">
-          <li><h2>atkārtoti lietojamie autiņi</h2></li>
-          <li><h2>draudzīgs bērnam</h2></li>
-          <li><h2>draudzīgs videi</h2></li>
-          <li><h2>draudzīgs makam</h2></li>
+          <li>
+            <h2>atkārtoti lietojamie autiņi</h2>
+          </li>
+          <li>
+            <h2>draudzīgs bērnam</h2>
+          </li>
+          <li>
+            <h2>draudzīgs videi</h2>
+          </li>
+          <li>
+            <h2>draudzīgs makam</h2>
+          </li>
         </ul>
       </div>
     </div>
 
     <div w3-include-html="assets/html/kokvilnas_autini.html"></div>
-    <div w3-include-html="assets/html/salvetes.html"></div>
-    <div w3-include-html="assets/html/pulveris.html"></div>
-    <div w3-include-html="assets/html/musilin.html"></div>
-    <div class="test" w3-include-html="assets/html/maisins.html"></div>
+    <!-- <div w3-include-html="assets/html/salvetes.html"></div>  -->
+    <div w3-include-html="assets/html/pulveris.html"></div> 
+    <!-- <div w3-include-html="assets/html/musilin.html"></div>
+    <div class="test" w3-include-html="assets/html/maisins.html"></div> -->
   </div>
 
   <script>

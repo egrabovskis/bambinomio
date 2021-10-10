@@ -1,5 +1,6 @@
 var slideIndex = 1;
-showDivs(slideIndex);
+// we cannot call it there as html fragment file may not be loaded yet
+// showDivs(slideIndex);
 
 function plusDivs(n) {
   showDivs(slideIndex += n);
