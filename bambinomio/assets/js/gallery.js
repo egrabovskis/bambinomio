@@ -1,27 +1,33 @@
-var slideIndex = 1;
-// we cannot call it there as html fragment file may not be loaded yet
-// showDivs(slideIndex);
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
+function nextElement(n, product) {
+  galeryCounters.set(product, galeryCounters.get(product) + n);
+  showElement(galeryCounters.get(product), product);
 }
 
-function currentDiv(n) {
-  showDivs(slideIndex = n);
-}
+function showElement(n, product) {
 
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
+  // show the right element
+  slideClass = product + "Slides"; // slide class is product id + "Slides"
+  let x = document.getElementsByClassName(slideClass);
+  if (n > x.length) {
+    galeryCounters.set(product, 1);
+    n = 1;
   }
+  if (n < 1) { 
+    galeryCounters.set(product, x.length);
+    n = x.length; 
+  };
+
+  let i;
+  for (i = 0; i < x.length; i++) {  // hide all elements
+    x[i].style.display = "none";
+  }
+  x[n - 1].style.display = "block"; // show the selected element 
+
+  // navigations dots (w3-badges)
+  var dots = document.getElementsByClassName("dots-" + product);
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" w3-white", "");
   }
-  x[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " w3-white";
+  dots[n - 1].className += " w3-white";
 }
