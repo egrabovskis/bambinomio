@@ -9,3 +9,14 @@
     width: 24px;
     padding: 0
 }
+
+.old-price {
+    color:#8f8ecc;
+    text-align: center;
+    text-decoration: line-through;
+}
+
+.new-price {
+    color:rgb(255, 0, 0);
+    text-align: center;
+}
