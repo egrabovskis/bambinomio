@@ -13,8 +13,10 @@
   <!-- javascript -->
   <script src="assets/js/includeHTML.js"></script>
   <script src="assets/js/gallery.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="assets/js/gallery2.js"></script>
+  <script src="assets/js/basket.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -45,26 +47,23 @@
         </ul>
       </div>
     </div>
-  </div>
 
-  <!-- products -->
-  <!-- <div w3-include-html="assets/html/kokvilnas_autini.html"></div> -->
-  <div w3-include-html="assets/html/pulveris.html"></div>
-  <div w3-include-html="assets/html/palags.html"></div>
-  <div w3-include-html="assets/html/swimnappiesgallery.html"></div>
+    <!-- products -->
+    <!-- <div w3-include-html="assets/html/kokvilnas_autini.html"></div> -->
+    <div w3-include-html="assets/html/pulveris.html"></div>
+    <div w3-include-html="assets/html/palags.html"></div>
+    <div w3-include-html="assets/html/swimnappiesgallery.html"></div>
+
+    <!-- basket-->
+    <div w3-include-html="assets/html/basket.html"></div>
+
+  </div>
 
   <script>
     var galeryCounters = new Map();
+    var basketData = [];
     includeHTML();
 
-    function toggleNavBar() {
-      var x = document.getElementById("navig-small-screens");
-      if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-      } else {
-        x.className = x.className.replace(" w3-show", "");
-      }
-    }
   </script>
 
 </body>
