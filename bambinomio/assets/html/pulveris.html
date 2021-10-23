@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<script>galeryCounters.set("pulveris", 1); </script>
+<script>galeryCounters.set("pulveris", 1);</script>
 <div id="pulveris" class="w3-padding-large w3-white">
   <header class="w3-row w3-border">
     <img src="assets/img/logo.png" style="width:5%" align="left">
@@ -25,7 +25,9 @@
           </p>
         </div>
       </div>
-      <p><button class="w3-btn w3-block w3-deep-purple">Veikt pasūtījumu</button></p>
+      <a href="./basket.html#basket" class="w3-btn w3-block w3-theme-d3"  
+      onclick="addToBasket('pulveris','BAMBINO MIO Care Washing Powder – veļas pulveris (800g)','15.99€','3.63€','assets/img/diapers.png' );" > Veikt pasūtījumu</a>
+       
     </div>
     <div class="w3-container w3-third">
       <div class="w3-content w3-display-container" style="max-width:800px">
@@ -36,13 +38,16 @@
           style="width:100%">
           <div class="w3-left w3-hover-theme:hover" onclick="nextElement(-1, 'pulveris')">&#10094;</div>
           <div class="w3-right w3-hover-theme:hover" onclick="nextElement(1, 'pulveris')">&#10095;</div>
-          <span class="w3-badge dots-pulveris w3-border w3-transparent w3-hover-white " onclick="showElement(1, 'pulveris')"></span>
-          <span class="w3-badge dots-pulveris w3-border w3-transparent w3-hover-white" onclick="showElement(2, 'pulveris')"></span>
-          <span class="w3-badge dots-pulveris w3-border w3-transparent w3-hover-white" onclick="showElement(3, 'pulveris')"></span>
+          <span class="w3-badge dots-pulveris w3-border w3-transparent w3-hover-white "
+            onclick="showElement(1, 'pulveris')"></span>
+          <span class="w3-badge dots-pulveris w3-border w3-transparent w3-hover-white"
+            onclick="showElement(2, 'pulveris')"></span>
+          <span class="w3-badge dots-pulveris w3-border w3-transparent w3-hover-white"
+            onclick="showElement(3, 'pulveris')"></span>
         </div>
       </div>
       <h4 class="old-price">19.99€</h4>
-      <h1 class="new-price">15.99€</h1>      
+      <h1 class="new-price">15.99€</h1>
     </div>
   </div>
 </div>

@@ -74,6 +74,29 @@
         x.className = x.className.replace(" w3-show", "");
       }
     }
+
+    function addToBasket(id, name, price, vat, img) {
+      // search if the product is already in basket
+      var product = basketData.filter(obj => {
+        return obj.id === id
+      })
+      if (product.length > 0) {  // we just increase the count
+        product[0].count += 1;
+      } else {  // the product is not yet in basket
+        basketData.push({
+          "id": id,
+          "name": name,
+          "price": id,
+          "vat": vat,
+          "count": 1,
+          "img": img,
+         });
+      }
+      localStorage.setItem("basketData", JSON.stringify(basketData));
+    }
+
+    var basketData = [];
+    localStorage.setItem("basketData", JSON.stringify(basketData));
   </script>
 
 </body>
