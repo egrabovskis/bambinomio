@@ -1,0 +1,90 @@
+div class="container">
+<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Veikt pasūtījumu</button>
+<div id="demo" class="collapse">
+  <form action="https://formsubmit.co/ilzegrabovska@inbox.lv" method="POST">
+    <h3>BAMBINO MIO Care Washing Powder – veļas pulveris (800g)</h3>
+    <div>
+      <label for="vārds">Vārds</label>
+      <input name="Vārds" required id="vārds">
+    </div>
+
+    <div>
+      <label for="uzvārds">Uzvārds</label>
+      <input name="Uzvārds" required id="uzvārds">
+    </div>
+
+    <div>
+      <label for="epasts">epasts</label>
+      <input type="email" name="email" required id="epasts">
+    </div>
+
+    <div>
+      <label for="numurs">numurs</label>
+      <input type="tel" epasts" name="phone" required id="numurs">
+    </div>
+
+    <div>
+      <label for="precesdaudzums">daudzums</label>
+      <input type="number" name=number required id="precesdaudzums" min="1" step="1">
+    </div>
+
+    <div>
+      <label for="piegādes veids">piegādes veids</label>
+      <select name="piegādes veids" id="piegādes veids">
+        <option value="omniva">omniva</option>
+        <option value="dpd">dpd</option>
+        <option value="Latvijas pasts">Latvijas pasts</option>
+        <option value="piegāde(Rīgā)">Piegāde(Rīgā)</option>
+      </select>
+    </div>
+
+
+
+    ja par piegādes veidu izvēlas omniva
+    <div>
+      <label for="dpd pakomāts">izvēlēties dpd pakomātu</label>
+      <select name="dpd pakomāts" id="dpd pakomāts">
+        <option value="Jelgavas Satiksmes ielas RIMI pakomāts, Satiksmes iela 35">Jelgavas Satiksmes ielas RIMI
+          pakomāts, Satiksmes iela 35</option>
+        <option value="Jelgavas Rūpniecības ielas ELVI pakomāts Rūpniecības iela, 77A">Jelgavas Rūpniecības
+          ielas ELVI pakomāts Rūpniecības iela, 77A</option>
+        <option value="Jelgavas T/C RAF pakomāts Rīgas iela, 48">Jelgavas T/C RAF pakomāts Rīgas iela, 48
+        </option>
+        <option value="Jelgavas T/C Valdeka pakomāts Rīgas iela, 11A">Jelgavas T/C Valdeka pakomāts Rīgas iela,
+          11A</option>
+      </select>
+    </div>
+
+    ja par piegādes veidu izvēlas dpd
+    <div>
+      <label for="dpd pakomāts">izvēlēties dpd pakomātu</label>
+      <select name="dpd pakomāts" id="dpd pakomāts">
+        <option value="Paku Skapis TC Jugla	Juglas krastmala 2, LV-1024">Paku Skapis TC Jugla Juglas krastmala
+          2, LV-1024</option>
+        <option value="Paku Skapis Rimi Saharova	Andreja Saharova iela 23a, LV-1082">Paku Skapis Rimi Saharova
+          Andreja Saharova iela 23a, LV-1082</option>
+        <option value="Paku Skapis Rimi Valdemārs	Krišjāņa Valdemāra iela 112, LV-1013">Paku Skapis Rimi
+          Valdemārs Krišjāņa Valdemāra iela 112, LV-1013</option>
+        <option value="Paku Skapis TC Spice	Lielirbes iela 29, LV-1046">Paku Skapis TC Spice Lielirbes iela 29,
+          LV-1046(Rīgā)</option>
+      </select>
+    </div>
+
+    ja par piegādes veidu izvēlas Latvijas pasts
+    <div>
+      <label for="pasts">Pasta indeks</label>
+      <input type="text" name="pasts" required id="pasts">
+    </div>
+
+
+    ja par piegādes veidu izvēlas piegāde(rīgā)
+    <div>
+      <label for="adrese">Adrese</label>
+      <input type="text" name="adrese" required id="adrese">
+    </div>
+
+    <div>
+      <button>veikt pasūtījumu</button>
+  </form>
+</div>
+</div>
