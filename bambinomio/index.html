@@ -8,34 +8,27 @@
   <!-- css -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="./assets/css/bambino.color.themes.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="./assets/css/gallery.css" />
-  <!-- <link rel="stylesheet" type="text/css" href="./assets/css/style.css" /> -->
-  <style>
-    body {
-      background-color: #f1f1fa;
-    }
-  </style>
-
+  <link rel="stylesheet" type="text/css" href="./assets/css/page.css" />
   <!-- javascript -->
   <script src="assets/js/includeHTML.js"></script>
   <script src="assets/js/gallery.js"></script>
+  <script src="assets/js/gallery2.js"></script>
   <script src="assets/js/basket.js"></script>
   <script src="assets/js/navigation.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-
 
 <body>
 
+  <!-- navigation -->
   <div w3-include-html="assets/html/navigation.html"></div>
 
-  <!-- Page content -->
+  <!-- introduction -->
   <div class="w3-text-theme w3-panel w3-content w3-padding-64" style="max-width:2000px">
-
-    <!-- introduction -->
     <div class="w3-row">
       <div class="w3-container w3-quarter ">
-        <img src="assets/img/logo.png" class="w3-round w3-margin-bottom" alt="logo" style="width:70%">
+        <img src="assets/img/logo.png" class="w3-round w3-margin-bottom" alt="logo" style="width:60%">
       </div>
       <div class="w3-container w3-threequarter ">
         <ul class="w3-ul w3-center ">
@@ -56,14 +49,12 @@
     </div>
 
     <!-- products -->
-    <div w3-include-html="assets/html/kokvilnas_autini.html"></div>
-    <!-- <div w3-include-html="assets/html/salvetes.html"></div>  -->
+    <!-- <div w3-include-html="assets/html/kokvilnas_autini.html"></div> -->
     <div w3-include-html="assets/html/pulveris.html"></div>
-    <hr>
     <div w3-include-html="assets/html/palags.html"></div>
-    <hr>
-    <!-- <div class="test" w3-include-html="assets/html/maisins.html"></div> -->
+    <div w3-include-html="assets/html/swimnappiesgallery.html"></div>
 
+    <!-- basket-->
     <div w3-include-html="assets/html/basket.html"></div>
 
   </div>
