@@ -1,16 +1,14 @@
 [
     {
-    "id": "palags",
-    "name":"Bambino Mio Mattress protector Aizsargpalags matracim-70 x 140 cm",
-    "price": "29.99€",
-    "pvn": "6.43€",
-    "img": "assets/img/palags1.jpg"
+        "id": "palags",
+        "img": "assets/img/palags1.jpg",
+        "name": "Bambino Mio Mattress protector Aizsargpalags matracim-70 x 140 cm",
+        "price": "29.99€"
     },
     {
-    "id": "pulveris",
-    "name":"BAMBINO MIO Care Washing Powder – veļas pulveris (800g)",
-    "price": "15.99€",
-    "pvn": "3.63€",
-    "img": "assets/img/pulveris.jpg"
+        "id": "pulveris",
+        "img": "assets/img/pulveris.jpg",
+        "name": "BAMBINO MIO Care Washing Powder – veļas pulveris (800g)",
+        "price": "15.99€"
     }
 ]
