@@ -1,4 +1,4 @@
-function addToBasket(id, img, name, price, ) {
+function addToBasket(id, img, name, price,) {
     // search if the product is already in basket
     var product = basketData.filter(obj => {
         return obj.id === id
@@ -19,9 +19,9 @@ function addToBasket(id, img, name, price, ) {
     // make basket button visible
     var baskeButtons = document.getElementsByClassName("basketButton");
     console.log("---- baskeButtons:", baskeButtons);
-    for (var i = 0; i < baskeButtons.length; i++){
+    for (var i = 0; i < baskeButtons.length; i++) {
         baskeButtons[i].className += " w3-show";
-    }    
+    }
     console.log("---- added to basket:", basketData);
 }
 
@@ -65,7 +65,7 @@ function showBasket(data) {
 
         for (var j = 1; j < col.length; j++) {
             var tabCell = tr.insertCell(-1);
-            if (j === col.length - 1) {  // last row contains picture
+            if (j === 1) {  // first row contains picture
                 productPicture = document.createElement("img");
                 productPicture.src = data[i][col[j]];
                 productPicture.style.width = "30%";
@@ -80,4 +80,7 @@ function showBasket(data) {
     basketTable.appendChild(basketTableForShow);
     console.log("---- 010 basketTableForShow:", basketTableForShow);
 
+    // make basket visible
+    var b = document.getElementById("basket");
+    b.className += " w3-show";
 }
