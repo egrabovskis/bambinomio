@@ -11,12 +11,12 @@
 }
 
 .old-price {
-    color:#8f8ecc;
+    color:#ec0606;
     text-align: center;
     text-decoration: line-through;
 }
 
 .new-price {
-    color:rgb(255, 0, 0);
+    color:rgb(129, 50, 175);
     text-align: center;
 }

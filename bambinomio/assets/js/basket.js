@@ -1,4 +1,4 @@
-function addToBasket(id, name, price, vat, img) {
+function addToBasket(id, img, name, price, ) {
     // search if the product is already in basket
     var product = basketData.filter(obj => {
         return obj.id === id
@@ -8,11 +8,12 @@ function addToBasket(id, name, price, vat, img) {
     } else {  // the product is not yet in basket
         basketData.push({
             "id": id,
-            "name": name,
-            "price": price,
-            "vat": vat,
-            "count": 1,
             "img": img,
+            "name": name,
+            "count": 1,
+            "price": price,
+
+
         });
     }
     console.log("---- added to basket:", basketData);
@@ -23,7 +24,7 @@ function showBasket(data) {
     var basketTableForShow = document.createElement("table");
 
     // EXTRACT VALUE FOR HTML HEADER. 
-    // ('id', 'name', 'price', "vat", "count", "img")
+    // ('id', "img" 'name', "count", 'price',)
     var col = [];
     for (var i = 0; i < data.length; i++) {
         for (var key in data[i]) {
@@ -36,19 +37,17 @@ function showBasket(data) {
     // insert header
     let tr = basketTableForShow.insertRow();         // insert row at table end
     let th = document.createElement("th");
+
+    th.innerHTML = "Attēls";
+    tr.appendChild(th);
+    th = document.createElement("th");
     th.innerHTML = "Preces nosaukums";
-    tr.appendChild(th);
-    th = document.createElement("th");
-    th.innerHTML = "Cena";
-    tr.appendChild(th);
-    th = document.createElement("th");
-    th.innerHTML = "PVN";
     tr.appendChild(th);
     th = document.createElement("th");
     th.innerHTML = "skaits";
     tr.appendChild(th);
     th = document.createElement("th");
-    th.innerHTML = "Attēls";
+    th.innerHTML = "Cena";
     tr.appendChild(th);
 
     basketTableForShow.innerHTML = "";
