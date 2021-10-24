@@ -15,6 +15,12 @@ function addToBasket(id, name, price, vat, img) {
             "img": img,
         });
     }
+    // make basket button visible
+    var baskeButtons = document.getElementsByClassName("basketButton");
+    console.log("---- baskeButtons:", baskeButtons);
+    for (var i = 0; i < baskeButtons.length; i++){
+        baskeButtons[i].className += " w3-show";
+    }    
     console.log("---- added to basket:", basketData);
 }
 
