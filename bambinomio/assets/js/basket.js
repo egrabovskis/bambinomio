@@ -77,31 +77,13 @@ function showBasket(data) {
         }
     }
     let vat = (totalAmount * 0.21).toFixed(2);
-    console.log("vat", vat);
-    console.log("totalAmount ", totalAmount);
-    console.log("totalCount ", totalCount);
-
-
-    console.log("---- 005 basketTableForShow:", basketTableForShow);
-
-    // sum row
-    let trs = basketTableForShow.insertRow();
-    let tabCells = trs.insertCell();
-
-   tabCells = trs.insertCell();
-    tabCells.innerHTML = "kopā";
-    tabCells = trs.insertCell();
-    tabCells.innerHTML = totalCount;
-    tabCells = trs.insertCell();
-    tabCells.innerHTML = totalAmount;
-    tabCells = trs.insertCell();
-    tabCells.innerHTML = vat;
-
-    basketTableForShow.appendChild(trs);
-
+    totalAmount = totalAmount.toFixed(2);
+    
     basketTable.innerHTML = "";
     basketTable.appendChild(basketTableForShow);
-    console.log("---- 010 basketTableForShow:", basketTableForShow);
+
+    document.getElementById("totalAmount").innerHTML = totalAmount;
+    document.getElementById("vat").innerHTML = vat;
 
     // make basket visible
     var b = document.getElementById("basket");
