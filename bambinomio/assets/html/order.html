@@ -3,64 +3,61 @@
 
 <div id="basket" class="w3-text-theme w3-content w3-hide">
     <h1>Grozs</h1>
-    
+
     <form action="https://formsubmit.co/ernests243@gmail.com" method="POST">
 
         <table id="basketTable" class="w3-table-all">
         </table>
         <div class="w3-container w3-right-align ">
             <h4>
-               Pasūtījuma summa <b><span id="totalAmount"></span>€</b><br>
-                PVN(21% iekļauts cenā) <b><span id="vat"></span>€</b>
+                Summa bez PVN <span id="totalWithoutVat"></span>€<br>
+                PVN 21% <span id="vat"></span>€<br>
+                Summa apmaksai ar PVN <span id="totalAmount"></span>€
             </h4>
         </div>
-      
-        <button onclick="document.getElementById('orderForm').style.display='block'" class="w3-btn w3-block w3-theme-d3">Noformēt
+
+        <button onclick="document.getElementById('orderForm').style.display='block'"
+            class="w3-btn w3-block w3-theme-d3">Noformēt
             pasūtījumu</button>
 
-            <div id="orderForm" class="w3-modal">
-                <div class="w3-modal-content">
-                    <header class="w3-container w3-theme-d3"> 
-                        <span onclick="document.getElementById('orderForm').style.display='none'" 
+        <div id="orderForm" class="w3-modal">
+            <div class="w3-modal-content">
+                <header class="w3-container w3-theme-d3">
+                    <span onclick="document.getElementById('orderForm').style.display='none'"
                         class="w3-button w3-display-topright">&times;</span>
-                        <h2>Pasūtījuma noformēšana</h2>
-                      </header>
-                        <div>
-                            <label for="vārds"><b>Vārds</b></label>
-                            <input  class="w3-input w3-border" type="text" required id="vārds">
-                        </div>
-                        <div>
-                            <label for="epasts"><b>E-pasts</b></label>
-                            <input class="w3-input w3-border" type="email" name="email" required id="epasts">
-                        </div>
-                        <div>
-                            <label for="numurs"><b>Tālrunis</b></label>
-                            <input class="w3-input w3-border" type="tel" name="phone" required id="numurs">
-                        </div>
-                        <div>
-                            <label for="adrese"><b>Adrese</b></label>
-                            <input class="w3-input w3-border" type="tel" name="adrese" required id="adrese">
-                        </div>
+                    <h2>Pasūtījuma noformēšana</h2>
+                </header>
+                <div>
+                    <label for="vārds"><b>Vārds</b></label>
+                    <input class="w3-input w3-border" type="text" required id="vārds">
+                </div>
+                <div>
+                    <label for="epasts"><b>E-pasts</b></label>
+                    <input class="w3-input w3-border" type="email" name="email" required id="epasts">
+                </div>
+                <div>
+                    <label for="numurs"><b>Tālrunis</b></label>
+                    <input class="w3-input w3-border" type="tel" name="phone" required id="numurs">
+                </div>
+                <div>
+                    <label for="adrese"><b>Adrese</b></label>
+                    <input class="w3-input w3-border" type="tel" name="adrese" required id="adrese">
+                </div>
 
-                        <div>
-                            <label for="numurs"><b>Uzvārds</b></label>
-                            <input class="w3-input w3-border" type="text" name="uzvārds" required id="uzvārds">
-                        </div>
+                <div>
+                    <label for="numurs"><b>Uzvārds</b></label>
+                    <input class="w3-input w3-border" type="text" name="uzvārds" required id="uzvārds">
+                </div>
 
-                        <div>
-                            <label for="pilseta"><b>Pilsēta</b></label>
-                            <input class="w3-input w3-border" type="text" name="pilseta" required id="pilseta">
-                        </div>
+                <div>
+                    <label for="pilseta"><b>Pilsēta</b></label>
+                    <input class="w3-input w3-border" type="text" name="pilseta" required id="pilseta">
+                </div>
 
-                        <div>
-                            <label for="pastaindekss"><b>Pasta indekss</b></label>
-                            <input class="w3-input w3-border" type="text" name="pastaindekss" required id="pastaindekss">
-                        </div>
-                        <button type="submit" class="w3-btn w3-block w3-theme-d3">pasūtīt</button>
+                <div>
+                    <label for="pastaindekss"><b>Pasta indekss</b></label>
+                    <input class="w3-input w3-border" type="text" name="pastaindekss" required id="pastaindekss">
+                </div>
+                <button type="submit" class="w3-btn w3-block w3-theme-d3">pasūtīt</button>
     </form>
 </div>
-
-
-
-
-
