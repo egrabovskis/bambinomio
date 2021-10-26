@@ -1,11 +1,11 @@
-function addToBasket(id, img, name, price,) {
+function addToBasket(id, img, name, price, ) {
     // search if the product is already in basket
     var product = basketData.filter(obj => {
         return obj.id === id
     })
-    if (product.length > 0) {  // we just increase the count
+    if (product.length > 0) { // we just increase the count
         product[0].count += 1;
-    } else {  // the product is not yet in basket
+    } else { // the product is not yet in basket
         basketData.push({
             "id": id,
             "img": img,
@@ -21,6 +21,12 @@ function addToBasket(id, img, name, price,) {
         baskeButtons[i].className += " w3-show";
     }
     console.log("---- added to basket:", basketData);
+}
+
+function deleteFromBasket(n) {
+    // delete n-th element from array basketData
+    basketData.splice(n, 1);
+    showBasket(basketData);
 }
 
 function showBasket(data) {
@@ -55,7 +61,7 @@ function showBasket(data) {
     th = document.createElement("th");
     th.innerHTML = "Cena par 1gab.";
     tr.appendChild(th);
-  
+
     basketTableForShow.innerHTML = "";
     basketTableForShow.appendChild(tr);
 
@@ -64,9 +70,9 @@ function showBasket(data) {
         tr = basketTableForShow.insertRow(); // insert row at table end
         totalAmount += data[i]["price"] * data[i]["count"];
         totalCount = totalCount + data[i]["count"];
-        for (var j = 1; j < col.length; j++) {
-            var tabCell = tr.insertCell(-1);
-            if (j === 1) {  // first row contains picture
+        for (let j = 1; j < col.length; j++) {
+            var tabCell = tr.insertCell();
+            if (j === 1) { // first row contains picture
                 productPicture = document.createElement("img");
                 productPicture.src = data[i][col[j]];
                 productPicture.style.width = "30%";
@@ -75,10 +81,19 @@ function showBasket(data) {
                 tabCell.innerHTML = data[i][col[j]];
             }
         }
+        tabCell = tr.insertCell();
+        let deleteIcon = document.createElement("i");
+        deleteIcon.className = "fa fa-trash-o";
+        deleteIcon.ariaHidden = "true";
+        deleteIcon.onclick = function () {
+            deleteFromBasket(i)
+        };
+        tabCell.appendChild(deleteIcon);
+        // tabCell.innerHTML = '<i class="fa fa-trash-o" aria-hidden="true"></i>';
     }
     let vat = (totalAmount * 0.21).toFixed(2);
     totalAmount = totalAmount.toFixed(2);
-    
+
     basketTable.innerHTML = "";
     basketTable.appendChild(basketTableForShow);
 
