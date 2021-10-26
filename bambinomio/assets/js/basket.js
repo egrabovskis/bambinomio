@@ -1,4 +1,4 @@
-function addToBasket(id, img, name, price, ) {
+function addToBasket(id, img, name, price,) {
     // search if the product is already in basket
     var product = basketData.filter(obj => {
         return obj.id === id
@@ -34,6 +34,8 @@ function showBasket(data) {
     var basketTableForShow = document.createElement("table");
     let totalAmount = 0;
     let totalCount = 0;
+
+
 
     // EXTRACT VALUE FOR HTML HEADER. 
     // ('id', "img" 'name', "count", 'price',)
@@ -91,14 +93,20 @@ function showBasket(data) {
         tabCell.appendChild(deleteIcon);
         // tabCell.innerHTML = '<i class="fa fa-trash-o" aria-hidden="true"></i>';
     }
+
     let vat = (totalAmount * 0.21).toFixed(2);
     totalAmount = totalAmount.toFixed(2);
+    totalWithoutVat = (totalAmount - vat).toFixed(2);
+
 
     basketTable.innerHTML = "";
     basketTable.appendChild(basketTableForShow);
 
-    document.getElementById("totalAmount").innerHTML = totalAmount;
+    document.getElementById("totalWithoutVat").innerHTML = totalWithoutVat;
     document.getElementById("vat").innerHTML = vat;
+    document.getElementById("totalAmount").innerHTML = totalAmount;
+
+
 
     // make basket visible
     var b = document.getElementById("basket");
