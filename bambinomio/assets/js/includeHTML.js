@@ -27,6 +27,9 @@ function includeHTML() {
       }
       xhttp.open("GET", file, true);
       xhttp.send();
+
+      generateGallery2("swimnappy-current", "swimnappies-list", "swimNapiesSizes", "swimNapiesBasketButton", swimNappiesData);
+      
       /*exit the function:*/
       return;
     }

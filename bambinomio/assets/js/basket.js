@@ -1,7 +1,7 @@
 function addToBasket(id, img, name, price,) {
     // search if the product is already in basket
     var product = basketData.filter(obj => {
-        return obj.id === id
+        return obj.name === name
     })
     if (product.length > 0) { // we just increase the count
         product[0].count += 1;

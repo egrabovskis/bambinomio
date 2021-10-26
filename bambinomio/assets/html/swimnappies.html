@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<title>gallery</title>
 
-<div class="w3-card-4">
+<div id="sw2" class="w3-card-4">
     <header class="w3-row">
         <img src="assets/img/logo.png" style="width:5%" align="left">
         <h2 style="text-align:center;">Swim nappy - Peldbiksītes</h2>
@@ -29,119 +28,17 @@
             <div class="w3-container w3-center">
                 <div>
                     <label for="izmērs"><h3>pieejamie izmēri</h3></label>
-                    <select name="izmērs" id="izmērs">
-                      <option value="mazas (S) - 5-7kg">mazas (S) - 5-7kg</option>
-                      <option value="vidējas (M)- 7-9kg">vidējas (M)- 7-9kg</option>
-                      <option value="lielas (L) - 9-12 kg">lielas (L) - 9-12 kg</option>
-                      <option value="ļoti lielas (XL) - 12-15 kg">ļoti lielas (XL) - 12-15 kg</option>
+                    <select name="izmērs" id="swimNapiesSizes">
                     </select>
                   </div>
-            <button class="w3-btn w3-block w3-theme-d3">Pievienot grozam</button>
+            <button id="swimNapiesBasketButton" class="w3-btn w3-block w3-theme-d3">Pievienot grozam</button>
             </div>
         </div>
 
-
-
-
         <div class="w3-container w3-half w3-row-padding w3-margin-top">
-            <div class="w3-container w3-half">
-                <img class="swimnappiesSlides" src="assets/img/ssupernovastar.jpeg" style="width:100%">
-                <img class="swimnappiesSlides" src="assets/img/spelicanpier.jpeg" style="width:100%;display:none">
-                <img class="swimnappiesSlides" src="assets/img/smellowmellon.jpeg" style="width:100%;display:none">
-                <img class="swimnappiesSlides" src="assets/img/sleapfrog.jpeg" style="width:100%;display:none">
-                <img class="swimnappiesSlides" src="assets/img/sanchorsaway.jpeg" style="width:100%;display:none">
-                <img class="swimnappiesSlides" src="assets/img/selectrofish.jpeg" style="width:100%;display:none">
-                <img class="swimnappiesSlides" src="assets/img/sallaboard.jpeg" style="width:100%;display:none">
-                <img class="swimnappiesSlides" src="assets/img/scoolcirus.jpeg" style="width:100%;display:none">
-                <img class="swimnappiesSlides" src="assets/img/sneonshark.jpeg" style="width:100%;display:none">
-                <img class="swimnappiesSlides" src="assets/img/spineappleparty.jpeg" style="width:100%;display:none">
-                <img class="swimnappiesSlides" src="assets/img/spinkflamingo.jpeg" style="width:100%;display:none">
-                <img class="swimnappiesSlides" src="assets/img/spuffinparade.jpeg" style="width:100%;display:none">
-                <img class="swimnappiesSlides" src="assets/img/sseahorse.jpeg" style="width:100%;display:none">
-                <img class="swimnappiesSlides" src="assets/img/sradientray.jpeg" style="width:100%;display:none">
-                <img class="swimnappiesSlides" src="assets/img/sturtlebay.jpeg" style="width:100%;display:none">
-                <img class="swimnappiesSlides" src="assets/img/swhalewharf.jpeg" style="width:100%;display:none">
-                <img class="swimnappiesSlides" src="assets/img/sallaboard.jpeg" style="width:100%;display:none">
-                <img class="swimnappiesSlides" src="assets/img/swimnappies.jpeg" style="width:100%;display:none">
-                <div class="w3-container w3-center">
-                    <h4 class="old-price">19.99€</h4>
-                    <h1 class="new-price">15.99€</h1>
-                </div>
+            <div id="swimnappy-current" class="w3-container w3-half">
             </div>
-            <div class="w3-container w3-half w3-row-padding w3-margin-top">
-                <div class="w3-quarter">
-                    <img class="swimnappies w3-opacity w3-hover-opacity-off w3-round"
-                        src="assets/img/ssupernovastar.jpeg" style="width:100%;cursor:pointer" onclick="currentDiv(1)">
-                </div>
-                <div class="w3-quarter">
-                    <img class="swimnappies w3-opacity w3-hover-opacity-off w3-round" src="assets/img/spelicanpier.jpeg"
-                        style="width:100%;cursor:pointer" onclick="currentDiv(2)">
-                </div>
-                <div class="w3-quarter">
-                    <img class="swimnappies w3-opacity w3-hover-opacity-off w3-round"
-                        src="assets/img/smellowmellon.jpeg" style="width:100%;cursor:pointer" onclick="currentDiv(3)">
-                </div>
-                <div class="w3-quarter">
-                    <img class="swimnappies w3-opacity w3-hover-opacity-off w3-round" src="assets/img/sleapfrog.jpeg"
-                        style="width:100%;cursor:pointer" onclick="currentDiv(4)">
-                </div>
-                <div class="w3-quarter">
-                    <img class="swimnappies w3-opacity w3-hover-opacity-off w3-round" src="assets/img/sanchorsaway.jpeg"
-                        style="width:100%;cursor:pointer" onclick="currentDiv(5)">
-                </div>
-                <div class="w3-quarter">
-                    <img class="swimnappies w3-opacity w3-hover-opacity-off w3-round" src="assets/img/selectrofish.jpeg"
-                        style="width:100%;cursor:pointer" onclick="currentDiv(6)">
-                </div>
-                <div class="w3-quarter">
-                    <img class="swimnappies w3-opacity w3-hover-opacity-off w3-round" src="assets/img/sallaboard.jpeg"
-                        style="width:100%;cursor:pointer" onclick="currentDiv(7)">
-                </div>
-                <div class="w3-quarter">
-                    <img class="swimnappies w3-opacity w3-hover-opacity-off w3-round" src="assets/img/scoolcirus.jpeg"
-                        style="width:100%;cursor:pointer" onclick="currentDiv(8)">
-                </div>
-                <div class="w3-quarter">
-                    <img class="swimnappies w3-opacity w3-hover-opacity-off w3-round" src="assets/img/sneonshark.jpeg"
-                        style="width:100%;cursor:pointer" onclick="currentDiv(9)">
-                </div>
-                <div class="w3-quarter">
-                    <img class="swimnappies w3-opacity w3-hover-opacity-off w3-round"
-                        src="assets/img/spineappleparty.jpeg" style="width:100%;cursor:pointer"
-                        onclick="currentDiv(10)">
-                </div>
-                <div class="w3-quarter">
-                    <img class="swimnappies w3-opacity w3-hover-opacity-off w3-round"
-                        src="assets/img/spinkflamingo.jpeg" style="width:100%;cursor:pointer" onclick="currentDiv(11)">
-                </div>
-                <div class="w3-quarter">
-                    <img class="swimnappies w3-opacity w3-hover-opacity-off w3-round"
-                        src="assets/img/spuffinparade.jpeg" style="width:100%;cursor:pointer" onclick="currentDiv(12)">
-                </div>
-                <div class="w3-quarter">
-                    <img class="swimnappies w3-opacity w3-hover-opacity-off w3-round" src="assets/img/sseahorse.jpeg"
-                        style="width:100%;cursor:pointer" onclick="currentDiv(13)">
-                </div>
-                <div class="w3-quarter">
-                    <img class="swimnappies w3-opacity w3-hover-opacity-off w3-round" src="assets/img/sradientray.jpeg"
-                        style="width:100%;cursor:pointer" onclick="currentDiv(14)">
-                </div>
-                <div class="w3-quarter">
-                    <img class="swimnappies w3-opacity w3-hover-opacity-off w3-round" src="assets/img/sturtlebay.jpeg"
-                        style="width:100%;cursor:pointer" onclick="currentDiv(15)">
-                </div>
-                <div class="w3-quarter">
-                    <img class="swimnappies w3-opacity w3-hover-opacity-off w3-round" src="assets/img/swhalewharf.jpeg"
-                        style="width:100%;cursor:pointer" onclick="currentDiv(16)">
-                </div>
-                <div class="w3-quarter">
-                    <img class="swimnappies w3-opacity w3-hover-opacity-off w3-round" src="assets/img/sallaboard.jpeg"
-                        style="width:100%;cursor:pointer" onclick="currentDiv(17)">
-                </div>
-                <div class="w3-quarter">
-                    <img class="swimnappies w3-opacity w3-hover-opacity-off w3-round" src="assets/img/swimnappies.jpeg"
-                        style="width:100%;cursor:pointer" onclick="currentDiv(18)">
-                </div>
+            <div id="swimnappies-list" class="w3-container w3-half w3-row-padding w3-margin-top">
             </div>
         </div>
     </div>
