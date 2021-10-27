@@ -41,8 +41,7 @@ function generateGallery2(idBigPicture, idListThumbmails, idSizes, idBasketButto
     let div = document.createElement("div");
     div.className = "w3-quarter";
     let img = document.createElement("img");
-    // img.className = "swimnappies w3-opacity w3-hover-opacity-off w3-round";
-    img.className = "miosoft w3-opacity w3-hover-opacity-off w3-round";
+    img.className = "w3-opacity w3-hover-opacity-off w3-round";
     img.src = data.colors[i].img;
     img.style.width = "100%";
     img.style.cursor = "pointer;"
@@ -94,6 +93,11 @@ function showGalleryImage2(n, idBigPicture, idSizes, idBasketButton, data) {
     let sizebig = document.createElement("option");
     sizebig.value = sizebig.text = "no 9kg (no 6mēnešiem)";
     sizes.appendChild(sizebig);
+  }
+  if (data.colors[n].sizes.indexOf("onesize") !== -1) {
+    let sizeonesize = document.createElement("option");
+    sizeonesize.value = sizeonesize.text = "viena izmēra";
+    sizes.appendChild(sizeonesize);
   }
 
   // modify basket button

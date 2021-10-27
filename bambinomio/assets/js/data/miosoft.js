@@ -25,17 +25,17 @@ var mioSoftData =
             "sizes": ["big"]
         },
         {
-            "name": "Elephant stomp",
+            "name": "-",
             "img": "assets/img/miosoft/mioduo-velcro-web_1080x_3e2868ef-8f2d-418f-8162-b1510b016664_900x-20211022-182904.jpg",
             "sizes": []
         },
         {
-            "name": "Elephant stomp",
+            "name": "-",
             "img": "assets/img/miosoft/mioduo-get-growing-open-tap-web_900x-20211022-182856.jpg",
             "sizes": []
         },
         {
-            "name": "Elephant stomp",
+            "name": "-",
             "img": "assets/img/miosoft/shēma_BMio-diaper-system.jpg",
             "sizes": []
         }
