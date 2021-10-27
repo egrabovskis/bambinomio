@@ -28,8 +28,9 @@ function includeHTML() {
       xhttp.open("GET", file, true);
       xhttp.send();
 
-      generateGallery2("swimnappy-current", "swimnappies-list", "swimNapiesSizes", "swimNapiesBasketButton", swimNappiesData);
-      
+      // generateGallery2("swimnappy-current", "swimnappies-list", "swimNapiesSizes", "swimNapiesBasketButton", swimNappiesData);
+      generateGallery2("miosoft-current", "miosoft-list", "mioSoftSizes", "mioSoftBasketButton", mioSoftData);
+     
       /*exit the function:*/
       return;
     }

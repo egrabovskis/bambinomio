@@ -55,14 +55,18 @@ function showBasket(data) {
     th.innerHTML = "Attēls";
     tr.appendChild(th);
     th = document.createElement("th");
-    th.innerHTML = "Preces nosaukums";
+    th.innerHTML = "Prece";
     tr.appendChild(th);
     th = document.createElement("th");
-    th.innerHTML = "skaits";
+    th.innerHTML = "Daudz.";
     tr.appendChild(th);
     th = document.createElement("th");
     th.innerHTML = "Cena par 1gab.";
     tr.appendChild(th);
+    th = document.createElement("th");
+    th.innerHTML = "Dzēst";
+    tr.appendChild(th);
+
 
     basketTableForShow.innerHTML = "";
     basketTableForShow.appendChild(tr);
@@ -107,7 +111,7 @@ function showBasket(data) {
     document.getElementById("totalAmount").innerHTML = totalAmount;
 
 
-
+    
     // make basket visible
     var b = document.getElementById("basket");
     b.className += " w3-show";

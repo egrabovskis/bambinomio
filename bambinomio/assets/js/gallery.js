@@ -41,7 +41,8 @@ function generateGallery2(idBigPicture, idListThumbmails, idSizes, idBasketButto
     let div = document.createElement("div");
     div.className = "w3-quarter";
     let img = document.createElement("img");
-    img.className = "swimnappies w3-opacity w3-hover-opacity-off w3-round";
+    // img.className = "swimnappies w3-opacity w3-hover-opacity-off w3-round";
+    img.className = "miosoft w3-opacity w3-hover-opacity-off w3-round";
     img.src = data.colors[i].img;
     img.style.width = "100%";
     img.style.cursor = "pointer;"
@@ -83,6 +84,16 @@ function showGalleryImage2(n, idBigPicture, idSizes, idBasketButton, data) {
     let sizeXL = document.createElement("option");
     sizeXL.value = sizeXL.text = "ļoti lielas (XL) - 12-15 kg";
     sizes.appendChild(sizeXL);
+  }
+  if (data.colors[n].sizes.indexOf("small") !== -1) {
+    let sizesmall = document.createElement("option");
+    sizesmall.value = sizesmall.text = "līdz 9kg (līdz 6mēnešiem)";
+    sizes.appendChild(sizesmall);
+  }
+  if (data.colors[n].sizes.indexOf("big") !== -1) {
+    let sizebig = document.createElement("option");
+    sizebig.value = sizebig.text = "no 9kg (no 6mēnešiem)";
+    sizes.appendChild(sizebig);
   }
 
   // modify basket button
