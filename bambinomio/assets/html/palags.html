@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<div id="palags" class="w3-padding-large w3-white">
-  <script>galeryCounters.set("palags", 1);</script>
+<div id="palags" class="w3-padding-large w3-white w3-card-4 w3-margin">
+  <script>galleryCounters.set("palags", 1);</script>
   <header class="w3-row w3-border">
     <h2 style="text-align:center;">Bambino Mio Mattress protector Aizsargpalags matracim-70 x 140 cm</h2>
   </header>
@@ -39,14 +39,14 @@
         <img class="palagsSlides" src="assets/img/palags2.jpg" style="width:100%; display:none">
         <div class="w3-center w3-container w3-section w3-transparent w3-display-bottommiddle w3-xxlarge"
           style="width:100%">
-          <div class="w3-left w3-hover-theme:hover" onclick="nextElement(-1, 'palags')">&#10094;</div>
-          <div class="w3-right w3-hover-theme:hover" onclick="nextElement(1, 'palags')">&#10095;</div>
-          <span class="w3-badge dots-palags w3-border w3-transparent" onclick="showElement(1, 'palags')"></span>
-          <span class="w3-badge dots-palags w3-border w3-transparent" onclick="showElement(2, 'palags')"></span>
+          <div class="w3-left w3-hover-theme:hover" onclick="galleryNext(-1, 'palags')">&#10094;</div>
+          <div class="w3-right w3-hover-theme:hover" onclick="galleryNext(1, 'palags')">&#10095;</div>
+          <span class="w3-badge dots-palags w3-border w3-transparent" onclick="galleryShow(1, 'palags')"></span>
+          <span class="w3-badge dots-palags w3-border w3-transparent" onclick="galleryShow(2, 'palags')"></span>
         </div>
       </div>
-      <h4 class="old-price">36.99€</h4>
-      <h1 class="new-price">29.99€</h1>
+      <!-- price will be loaded from simpleProductPrices -->
+      <h1 id="palagsPrice" class="new-price"></h1>  
     </div>
   </div>
 </div>
