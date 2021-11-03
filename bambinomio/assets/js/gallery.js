@@ -1,20 +1,20 @@
 
-function nextElement(n, product) {
-  galeryCounters.set(product, galeryCounters.get(product) + n);
-  showElement(galeryCounters.get(product), product);
+function galleryNext(n, product) {
+  // show next element for simple gallery
+  galleryCounters.set(product, galleryCounters.get(product) + n);
+  galleryShow(galleryCounters.get(product), product);
 }
 
-function showElement(n, product) {
-
-  // show the right element
+function galleryShow(n, product) {
+  // show the chosen element for simple gallery
   slideClass = product + "Slides"; // slide class is product id + "Slides"
   let x = document.getElementsByClassName(slideClass);
   if (n > x.length) {
-    galeryCounters.set(product, 1);
+    galleryCounters.set(product, 1);
     n = 1;
   }
   if (n < 1) {
-    galeryCounters.set(product, x.length);
+    galleryCounters.set(product, x.length);
     n = x.length;
   };
 
