@@ -16,11 +16,9 @@ function addToBasket(id, img, name, price,) {
     }
     // make basket button visible
     var baskeButtons = document.getElementsByClassName("basketButton");
-    console.log("---- baskeButtons:", baskeButtons);
     for (var i = 0; i < baskeButtons.length; i++) {
         baskeButtons[i].className += " w3-show";
     }
-    console.log("---- added to basket:", basketData);
 }
 
 function deleteFromBasket(n) {
@@ -29,13 +27,21 @@ function deleteFromBasket(n) {
     showBasket(basketData);
 }
 
+function changeCountInbasketBasket(n, modifier) {
+    // delete n-th element from array basketData
+    basketData[n]["count"] += modifier;
+    if (basketData[n]["count"] < 1) {
+        basketData[n]["count"] = 1;
+    }
+    showBasket(basketData);
+}
+
 function showBasket(data) {
     var basketTable = document.getElementById("basketTable");
     var basketTableForShow = document.createElement("table");
+    basketTableForShow.className = "w3-table-all";
     let totalAmount = 0;
     let totalCount = 0;
-
-
 
     // EXTRACT VALUE FOR HTML HEADER. 
     // ('id', "img" 'name', "count", 'price',)
@@ -77,12 +83,22 @@ function showBasket(data) {
         totalAmount += data[i]["price"] * data[i]["count"];
         totalCount = totalCount + data[i]["count"];
         for (let j = 1; j < col.length; j++) {
-            var tabCell = tr.insertCell();
+            let tabCell = tr.insertCell();
             if (j === 1) { // first row contains picture
                 productPicture = document.createElement("img");
                 productPicture.src = data[i][col[j]];
                 productPicture.style.width = "30%";
                 tabCell.appendChild(productPicture);
+            } else if (j === 3) { // quantity
+                let quantityId = "basketRow_" + i;
+                let callString = "changeCountInbasketBasket(" + i ;
+                let html =
+                    '<table class="w3-table"><tr>' +
+                    '<td><button onclick="' + callString + ', -1);">-</button></td>' +
+                    '<td><input id="' + quantityId + '" type="number" min=1 value="' + data[i]["count"] + '" style="max-width:40px" readonly></td>' +
+                    '<td><button onclick="' + callString + ', 1);">+</button></td>' +
+                    "</tr></table>"
+                tabCell.innerHTML = html;
             } else {
                 tabCell.innerHTML = data[i][col[j]];
             }
@@ -111,7 +127,7 @@ function showBasket(data) {
     document.getElementById("totalAmount").innerHTML = totalAmount;
 
 
-    
+
     // make basket visible
     var b = document.getElementById("basket");
     b.className += " w3-show";
