@@ -91,7 +91,7 @@ function showBasket(data) {
                 tabCell.appendChild(productPicture);
             } else if (j === 3) { // quantity
                 let quantityId = "basketRow_" + i;
-                let callString = "changeCountInbasketBasket(" + i ;
+                let callString = "changeCountInbasketBasket(" + i;
                 let html =
                     '<table class="w3-table"><tr>' +
                     '<td><button onclick="' + callString + ', -1);">-</button></td>' +
@@ -127,8 +127,82 @@ function showBasket(data) {
     document.getElementById("totalAmount").innerHTML = totalAmount;
 
 
-
     // make basket visible
     var b = document.getElementById("basket");
     b.className += " w3-show";
+}
+
+function handleDeliveryClick(myRadio) {
+    if (myRadio.value == "omniva") {
+        showElement("omnivaLocationList");
+    } else {
+        hideElement("omnivaLocationList");
+    }
+}
+
+function checkOrder() {
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const phone = document.getElementById("phone");
+    const deliveryOmniva = document.getElementById("deliveryOmniva");
+    const omnivaLocationList = document.getElementById("omnivaLocationList");
+
+    if (!name.checkValidity()) {
+        name.focus();
+    } else if (!email.checkValidity()) {
+        email.focus();
+    } else if (!phone.checkValidity()) {
+        phone.focus();
+    } else if (deliveryOmniva.checked && omnivaLocationList.value == 'Izvēlieties Omniva Pakomātu')  {
+        alert("Izvēlieties Omniva pakomātu")
+        omnivaLocationList.focus();
+    } else {
+        const form = document.getElementById("fullOrderForm");
+        form.onsubmit = function () {
+            return true;
+        };
+    }
+}
+
+function getOmnivaLocations() {
+    let dropdown = document.getElementById('omnivaLocationList');
+    dropdown.length = 0;
+
+    let defaultOption = document.createElement('option');
+    defaultOption.text = 'Izvēlieties Omniva Pakomātu';
+
+    dropdown.add(defaultOption);
+    dropdown.selectedIndex = 0;
+
+    const url = 'https://www.omniva.lv/locations.json';
+
+    fetch(url)
+        .then(
+            function (response) {
+                if (response.status !== 200) {
+                    console.warn('Looks like there was a problem. Status Code: ' +
+                        response.status);
+                    return;
+                }
+
+                // Examine the text in the response  
+                response.json().then(function (data) {
+                    let option;
+
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].A0_NAME == "LV") {  // tikai LV pakomātus
+                            option = document.createElement('option');
+                            option.text = data[i].NAME;
+                            option.value = data[i].NAME;
+                            dropdown.add(option);
+                        }
+                    }
+                });
+            }
+        )
+        .catch(function (err) {
+            console.error('Fetch Error -', err);
+        });
+
+
 }
