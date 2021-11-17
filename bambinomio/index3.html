@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="lv">
+
+<head>
+    <title>bambinomio.lv</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+<header>
+    <div class="w3-row">
+        <div class="w3-col w3-container" style="width:10%">
+            <div class="w3-container w3-border">
+                <p>test</p>
+                 </div>
+                 <div class="w3-container w3-border w3-deep-purple">
+                    <p>test</p>
+                     </div>
+                     <div class="w3-container w3-border">
+                        <p>test</p>
+                         </div>
+        </div>
+
+        <div class="w3-col w3-container" style="width:15%">
+            <img src="assets/img/logo.png" class="w3-round w3-margin-bottom" style="width:90%">
+        </div>
+
+        <div class="w3-col w3-container" style="width:75%">
+            <div class="w3-container w3-border">
+                <div w3-include-html="assets/html/order.html"></div>
+                <p>t</p>
+                 </div>
+                 <div class="w3-container w3-border w3-deep-purple style="width: 100px; height: 100px;">
+                    <p>test</p>
+                     </div>
+                     <div class="w3-container w3-border">
+                        <div w3-include-html="assets/html/navigation.html"></div><p>t</p>
+                         </div>
+        </div>
+    </div>
+</header>
+    <script>
+        var galleryCounters = new Map();
+        var basketData = [];
+        includeHTML();
+        w3.hide('.basketButton');
+    
+      </script>
+</body>
+
+
+</html>
