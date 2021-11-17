@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<div id="bioliners" class="w3-padding-large w3-white w3-card-4 w3-margin">
+  <script>galleryCounters.set("bioliners", 1);</script>
+  <header class="w3-row w3-border">
+    <h2 style="text-align:center;">BAMBINO MIO Care Washing Powder – bioliners(800g)</h2>
+  </header>
+
+  <div class="w3-row w3-border ">
+    <div class="w3-container w3-twothird">
+      <ul class=" w3-ul w3-justify">
+        <li> bioliners – īpaši mīksti biosairstoš ieliktnīši </li>
+        <li> vienkārši un ērti lietojami </li>
+        <li> vienvirziena uzbūve ļauj mitrumam izsūkties tam cauri, bet aiztur tā noplūdi atpakaļ </li>
+        <li> ieliktņi aiztur netīrumus, neļaujot autiņam sasmērēties </li>
+        <li> tie ir biosairstoši, tos var droši nolaist tualetes podā, nebaidoties kaitēt videi </li>
+        <li> iepakojums -rullis 100 gab. </li>
+      </ul>
+      <p><b>Uzmanību:</b> autiņu ieliktnīšu nolaišana kanalizācijā var izraisīt vecu vai bojātu cauruļu aizsērēšanos!
+        Mēs neuzņemamies atbildību par individuālās kanalizācijas sistēmas stāvokli.</p>
+      <div class="w3-container">
+        <div class="w3-panel w3-border w3-light-grey w3-round-large w3-left-align">
+
+        </div>
+      </div>
+      <button class="w3-btn w3-block w3-theme-d3"
+        onclick="addToBasket('bioliners','assets/img/bioliners_2.png','bioliners_1', 9.99, );">Pievienot grozam</button>
+    </div>
+
+    <div class="w3-container w3-third">
+      <div class="w3-content w3-display-container" style="max-width:800px">
+        <img class="biolinersSlides" src="assets/img/bioliners/bioliners_1.jpg" style="width:100%">
+        <img class="biolinersSlides" src="assets/img/bioliners/bioliners_2.png" style="width:100%; display:none">
+        <div class="w3-center w3-container w3-section w3-transparent w3-display-bottommiddle w3-xxlarge"
+          style="width:100%">
+          <div class="w3-left w3-hover-theme:hover" onclick="galleryNext(-1, 'bioliners')">&#10094;</div>
+          <div class="w3-right w3-hover-theme:hover" onclick="galleryNext(1, 'bioliners')">&#10095;</div>
+          <span class="w3-badge dots-bioliners w3-border w3-transparent w3-hover-white "
+            onclick="galleryShow(1, 'bioliners')"></span>
+          <span class="w3-badge dots-bioliners w3-border w3-transparent w3-hover-white"
+            onclick="galleryShow(2, 'bioliners')"></span>
+        </div>
+      </div>
+
+      <!-- price will be loaded from simpleProductPrices -->
+      <h1 id="biolinersPrice" class="new-price"></h1>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById("biolinersPrice").innerHTML = simpleProductPrices["bioliners"] + "€";
+</script>
