@@ -2,78 +2,106 @@
 <html lang="lv">
 
 <head>
-  <title>bambinomio.lv</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- css -->
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="./assets/css/bambino.color.themes.css">
-  <link rel="stylesheet" type="text/css" href="./assets/css/gallery.css" />
-  <link rel="stylesheet" type="text/css" href="./assets/css/page.css" />
-  <!-- javascript -->
-  <script src="https://www.w3schools.com/lib/w3.js"></script>
-  <script src="assets/js/includeHTML.js"></script>
-  <script src="assets/js/gallery.js"></script>
-  <script src="assets/js/basket.js"></script>
-  <script src="assets/js/navigation.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>bambinomio.lv</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/bambino.color.themes.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/page.css" />
+    <!-- javascript -->
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script src="assets/js/includeHTML.js"></script>
+    <script src="assets/js/gallery.js"></script>
+    <script src="assets/js/basket.js"></script>
+    <script src="assets/js/navigation.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  <script src="assets/js/data/simpleProducts.js"></script>
-  <script src="assets/js/data/swimnappies.js"></script>
-  <script src="assets/js/data/miosoft.js"></script>
-  <script src="assets/js/data/miosolo.js"></script>
+    <script src="assets/js/data/simpleProducts.js"></script>
+    <script src="assets/js/data/swimnappies.js"></script>
+    <script src="assets/js/data/miosoft.js"></script>
+    <script src="assets/js/data/miosolo.js"></script>
 </head>
 
 <body>
 
-  <!-- navigation -->
-  <div w3-include-html="assets/html/navigation.html"></div>
+    <div class="w3-top">
+        <div class="w3-row w3-theme-d3">
 
-  <!-- introduction -->
-  <div class="w3-text-theme w3-panel w3-content w3-padding-64" style="max-width:2000px">
-    <div class="w3-row">
-      <div class="w3-container w3-quarter ">
-        <img src="assets/img/logo.png" class="w3-round w3-margin-bottom" alt="logo" style="width:60%">
-      </div>
-      <div class="w3-container w3-threequarter ">
-        <ul class="w3-ul w3-center ">
-          <li>
-            <h2>atkārtoti lietojamie autiņi</h2>
-          </li>
-          <li>
-            <h2>draudzīgs bērnam</h2>
-          </li>
-          <li>
-            <h2>draudzīgs videi</h2>
-          </li>
-          <li>
-            <h2>draudzīgs makam</h2>
-          </li>
-        </ul>
-      </div>
+            <div class="w3-col" style="width:10%">
+                <img src="assets/img/logo.png" class="w3-round w3-padding" style="width:100%">
+            </div>
+
+
+
+            <div class="w3-col" style="width:62%">
+                <a href="#basket" class="w3-button w3-block w3-margin" onclick="showBasket(basketData)">
+                    <h4>Atkārtotie lietojamie autiņi – labāk mazulim, draudzīgāk jūsu maciņam un
+                        zaļāk mūsu apkārtējai videi.</h4>
+                </a>
+            </div>
+
+            <div class="w3-col" style="width:10%">
+                <button class="w3-button w3-margin" onclick="location.href='#';">
+                    <h6><i class="fa fa-phone" aria-hidden="true"></i> Kontakti</h6>
+                </button>
+
+            </div>
+
+            <div class="w3-col" style="width:10%">
+                <button class="w3-button w3-margin" onclick="location.href='#';">
+                    <h6><i class="fa fa-info-circle" aria-hidden="true"></i> Piegāde<br> un apmaksa</h6>
+                </button>
+            </div>
+
+            <div class="w3-col" style="width:8%">
+                <a href="#basket" class="w3-button w3-block w3-margin" onclick="showBasket(basketData)">
+                    <h6><i class="w3-right-align fa fa-shopping-cart" aria-hidden="true"></i> Grozs<br></h6>
+                </a>
+            </div>
+
+
+            <div class="w3-col w3-padding w3-display-bottomright " style="width:90%">
+                <div class="w3-container w3-theme-d3">
+                    <div w3-include-html="assets/html/navigationlarge.html"></div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
+
+
+
+
+
+
+
+
     <!-- products -->
-    <!-- <div w3-include-html="assets/html/kokvilnas_autini.html"></div> -->
-    <div w3-include-html="assets/html/pulveris.html"></div>
-    <div w3-include-html="assets/html/palags.html"></div>
-    <div w3-include-html="assets/html/swimnappies.html"></div>
+   
+    <div style="margin-top:140px">
+  
     <div w3-include-html="assets/html/miosoft.html"></div>
     <div w3-include-html="assets/html/miosolo.html"></div>
     <div w3-include-html="assets/html/bioliners.html"></div>
+ 
     <!-- basket-->
     <div w3-include-html="assets/html/order.html"></div>
+ </div>
 
-  </div>
 
-  <script>
-    var galleryCounters = new Map();
-    var basketData = [];
-    includeHTML();
-    w3.hide('.basketButton');
 
-  </script>
+    <script>
+        var galleryCounters = new Map();
+        var basketData = [];
+        includeHTML();
+        w3.hide('.basketButton');
+
+    </script>
 
 </body>
 
