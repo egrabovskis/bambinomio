@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="lv">
+
+<head>
+    <title>bambinomio.lv</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/bambino.color.themes.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/page.css" />
+    <!-- javascript -->
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script src="assets/js/includeHTML.js"></script>
+    <script src="assets/js/gallery.js"></script>
+    <script src="assets/js/basket.js"></script>
+    <script src="assets/js/navigation.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="assets/js/data/simpleProducts.js"></script>
+    <script src="assets/js/data/swimnappies.js"></script>
+    <script src="assets/js/data/miosoft.js"></script>
+    <script src="assets/js/data/miosolo.js"></script>
+</head>
+
+<body>
+    <div class="w3-bar w3-theme-d3">
+
+        <img src="assets/img/logo.png" class="w3-round w3-padding w3-left w3-bar-item"
+            style="max-height:130px; height:90%">
+
+        <div class="w3-bar-item w3-bar-block">
+            <div class="w3-bar">
+                <button class="w3-btn" onclick="location.href='#';">
+                    <h6><i class="fa fa-phone" aria-hidden="true"></i> Kontakti</h6>
+                </button>
+                <button class="w3-button" onclick="location.href='#';">
+                    <h6><i class="fa fa-info-circle" aria-hidden="true"></i> Piegāde<br> un apmaksa</h6>
+                </button>
+                <a href="#basket" class="w3-button" onclick="showBasket(basketData)">
+                    <h6><i class="w3-right-align fa fa-shopping-cart" aria-hidden="true"></i> Grozs<br></h6>
+                </a>
+            </div>
+
+            <div class="w3-bar w3-theme-d3">
+                <div w3-include-html="assets/html/navigation.html"></div>
+            </div>
+        </div>
+    </div>
+    <!-- products -->
+
+    <div style="margin-top:100px">
+
+        <div w3-include-html="assets/html/miosoft.html"></div>
+        <div w3-include-html="assets/html/miosolo.html"></div>
+        <div w3-include-html="assets/html/bioliners.html"></div>
+
+        <!-- basket-->
+        <div w3-include-html="assets/html/order.html"></div>
+    </div>
+
+
+
+    <script>
+        var galleryCounters = new Map();
+        var basketData = [];
+        includeHTML();
+        w3.hide('.basketButton');
+
+    </script>
+
+
+</body>
+
+</html>
