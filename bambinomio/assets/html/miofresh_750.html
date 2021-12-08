@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<div id="miofresh_750" class="w3-padding-large w3-white w3-card-4 w3-margin">
+  <script>galleryCounters.set("miofresh_750", 1);</script>
+  <header class="w3-row w3-border">
+    <h2 style="text-align:center;">Mio Fresh - Traipu tīrāmais līdzeklis 750 g</h2>
+  </header>
+
+  <div class="w3-row w3-border ">
+    <div class="w3-container w3-twothird">
+      <ul class=" w3-ul w3-justify">
+        <li> Mio Fresh autiņu tīrāmais līdzeklis </li>
+        <li> tas ir pirmais lietotājam un videi nekaitīgs, biosairstošs autiņu tīrāmais līdzeklis</li>
+        <li>
+          <div>tā antibakteriālā, baktericīdā iedarbība mazgāšanas laikā iztīra, atsvaidzina un aromatizē autiņus,</div>
+          <div> kā arī mazina nepieciešamību mazgāt tos karstā ūdenī vai mērcēt</div>
+        </li>
+        <li> biosairstošs </li>
+        <li> nesatur enzīmus, sintētiskas smaržvielas, hlora balinātājus, krāsvielas </li>
+      </ul>
+      <p> Pieejamie iepakojumi ar mērkarotīti– 750 g un 300 g </p>
+      <div class="w3-container">
+        <div class="w3-panel w3-border w3-light-grey w3-round-large w3-left-align">
+        </div>
+      </div>
+      <button class="w3-btn w3-block w3-theme-d3"
+        onclick="addToBasket('miofresh_750','assets/img/miofresh/miofresh_750_1.jpg', 'Mio Fresh - Traipu tīrāmais līdzeklis 750 g', simpleProductPrices['miofresh_750'] );">Pievienot grozam</button>
+    </div>
+
+    <div class="w3-container w3-third">
+      <div class="w3-content w3-display-container" style="max-width:800px">
+        <img class="miofresh_750Slides" src="assets/img/miofresh/miofresh_750_1.jpg" style="width:100%">
+        <img class="miofresh_750Slides" src="assets/img/miofresh/lietosana.jpg" style="width:100%; display:none">
+        <div class="w3-center w3-container w3-section w3-transparent w3-display-bottommiddle w3-xxlarge"
+          style="width:100%">
+          <div class="w3-left w3-hover-theme:hover" onclick="galleryNext(-1, 'miofresh_750')">&#10094;</div>
+          <div class="w3-right w3-hover-theme:hover" onclick="galleryNext(1, 'miofresh_750')">&#10095;</div>
+          <span class="w3-badge dots-miofresh_750 w3-border w3-transparent w3-hover-white "
+            onclick="galleryShow(1, 'miofresh_750')"></span>
+          <span class="w3-badge dots-miofresh_750 w3-border w3-transparent w3-hover-white"
+            onclick="galleryShow(2, 'miofresh_750')"></span>
+        </div>
+      </div>
+
+      <!-- price will be loaded from simpleProductPrices -->
+      <h1 id="miofresh_750Price" class="new-price"></h1>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById("miofresh_750Price").innerHTML = simpleProductPrices["miofresh_750"] + "€";
+</script>
