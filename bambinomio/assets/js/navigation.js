@@ -1,5 +1,5 @@
 function toggleNavBar() {
-  toggleElement("navig-small-screens");
+  toggleElement("navig-medium-screens");
 }
 
 function toggleElement(id) {
