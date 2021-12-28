@@ -46,7 +46,7 @@
                     </button>
 
                     <button class="w3-btn w3-right" onclick="location.href='#';">
-                        <div class="w3-hide-small"><h6><i class="fa fa-info-circle" aria-hidden="true"></i> Piegāde un apmaksa<h6> </div>
+                        <div class="w3-hide-small"><h6><i class="fa fa-info-circle" aria-hidden="true"></i> Piegāde un apmaksa</h6> </div>
                     </button>
                 </div>
 
@@ -78,6 +78,9 @@
     <script>
         var galleryCounters = new Map();
         var basketData = [];
+        var deliveryPrice = 0;
+        var clientName, clientEmail, clientPhone;
+        var deliveryService, deliveryDetails;
         includeHTML();
         w3.hide('.basketButton');
 

@@ -37,8 +37,8 @@ function changeCountInbasketBasket(n, modifier) {
 }
 
 function showBasket(data) {
-    var basketTable = document.getElementById("basketTable");
-    var basketTableForShow = document.createElement("table");
+    const basketTable = document.getElementById("basketTable");
+    const basketTableForShow = document.createElement("table");
     basketTableForShow.className = "w3-table-all";
     let totalAmount = 0;
     let totalCount = 0;
@@ -126,7 +126,7 @@ function showBasket(data) {
     document.getElementById("vat").innerHTML = vat;
     document.getElementById("totalAmount").innerHTML = totalAmount;
 
-
+    handleDeliveryClick(this); // show selected delivery fields
     // make basket visible
     var b = document.getElementById("basket");
     b.className += " w3-show";
@@ -135,33 +135,154 @@ function showBasket(data) {
 function handleDeliveryClick(myRadio) {
     if (myRadio.value == "omniva") {
         showElement("omnivaLocationList");
-    } else {
+        hideElement("latvijasPastsDelivery");
+        hideElement("courierDelivery");
+    } else if (myRadio.value == "lp") {
         hideElement("omnivaLocationList");
+        showElement("latvijasPastsDelivery");
+        hideElement("courierDelivery");
+    } else if (myRadio.value == "courier") {
+        hideElement("omnivaLocationList");
+        hideElement("latvijasPastsDelivery");
+        showElement("courierDelivery");
+    } else {
+        showElement("omnivaLocationList");
+        hideElement("latvijasPastsDelivery");
+        hideElement("courierDelivery");
+    }
+}
+
+function checkPrivateData() {
+    clientName = document.getElementById("clientName");
+    clientEmail = document.getElementById("clientEmail");
+    clientPhone = document.getElementById("clientPhone");
+
+    if (!clientName.reportValidity()) {
+        clientName.focus();
+    } else if (!clientEmail.reportValidity()) {
+        clientEmail.focus();
+    } else if (!clientPhone.reportValidity()) {
+        clientPhone.focus();
+    } else {
+        hideElement("checkPrivateDataButton");
+        showElement("orderDelivery");
+        showElement("orderConfirm");
     }
 }
 
 function checkOrder() {
-    const name = document.getElementById("name");
-    const email = document.getElementById("email");
-    const phone = document.getElementById("phone");
+    clientName = document.getElementById("clientName");
+    clientEmail = document.getElementById("clientEmail");
+    clientPhone = document.getElementById("clientPhone");
+
+    if (!clientName.reportValidity()) {
+        clientName.focus();
+        return;
+    } else if (!clientEmail.reportValidity()) {
+        clientEmail.focus();
+        return;
+    } else if (!clientPhone.reportValidity()) {
+        clientPhone.focus();
+        return;
+    } else {
+        const deliveryBlock = document.getElementById("orderDelivery");
+        deliveryBlock.disabled = false;
+    }
+
     const deliveryOmniva = document.getElementById("deliveryOmniva");
     const omnivaLocationList = document.getElementById("omnivaLocationList");
-
-    if (!name.checkValidity()) {
-        name.focus();
-    } else if (!email.checkValidity()) {
-        email.focus();
-    } else if (!phone.checkValidity()) {
-        phone.focus();
-    } else if (deliveryOmniva.checked && omnivaLocationList.value == 'Izvēlieties Omniva Pakomātu')  {
-        alert("Izvēlieties Omniva pakomātu")
-        omnivaLocationList.focus();
-    } else {
-        const form = document.getElementById("fullOrderForm");
-        form.onsubmit = function () {
-            return true;
-        };
+    if (deliveryOmniva.checked) {
+        if ( omnivaLocationList.value == 'Izvēlieties Omniva Pakomātu') {
+            alert("Izvēlieties Omniva pakomātu")
+            omnivaLocationList.focus();
+            return;
+        }
+        deliveryService = "OMNIVA";
+        deliveryDetails = omnivaLocationList.value;
+        deliveryPrice = 2.99;
+    } else if (deliveryLP.checked) {
+        deliveryService = "Latvijas pasts";
+        deliveryPrice = 3.99;
+        const lpAddress1 = document.getElementById("lpAddress1");
+        const lpAddress2 = document.getElementById("lpAddress2");
+        const lpAddress3 = document.getElementById("lpAddress3");
+        if (!lpAddress1.reportValidity()) {
+            lpAddress1.focus();
+            return;
+        } else if (!lpAddress2.reportValidity()) {
+            lpAddress2.focus();
+            return;
+        } if (!lpAddress1.reportValidity()) {
+            lpAddress3.focus();
+            return;
+        }
+        deliveryDetails = lpAddress1.value  + " " + lpAddress2.value + " " + lpAddress3.value;
+    } else if (deliveryCourier.checked) {
+        deliveryService = "Kurjers";
+        deliveryPrice = 5;
+        const rigaAddress = document.getElementById("rigaAddress");
+        if (!rigaAddress.reportValidity()) {
+            rigaAddress.focus();
+            return;
+        }
+        deliveryDetails = rigaAddress.value;
     }
+    showOrder();
+}
+
+function showOrder() {
+    let totalAmount = 0;
+    let totalCount = 0;
+    const order = document.getElementById("order");
+    let html = "<h2>Pasūtījums</h2>" +
+        '<table class="w3-table-all">' +
+        "<tr><th>Attēls</th>" +
+        "<th>Prece</th>" +
+        "<th>Daudzums</th>" +
+        "<th>Cena par 1gab.</th>" +
+        "<th>Kopējā cena</th></tr>";
+    basketData.forEach(function (item, index) {
+        console.log(item, index);
+        html += '<tr><td><img src="' + item.img + '" style="width:30%"></td>' +
+        "<td>" + item.name + "</td>" +
+        "<td>" + item.count + "</td>" +
+        "<td>" + item.price + "€</td>" +
+        "<td>" + (item.price * item.count).toFixed(2) + "€</td></tr>" 
+        totalAmount += item.price * item.count;
+        totalCount = totalCount + item.count;
+    })
+    html += '<tr><td></td>' +
+    "<td>Kopā</td>" +
+    "<td>" + totalCount + "</td>" +
+    "<td></td>" +
+    "<td>" + totalAmount.toFixed(2) + "€</td></tr>" 
+    html += "</table>";
+
+    let vat = (totalAmount * 0.21).toFixed(2);
+    let totalWithoutVat = (totalAmount - vat).toFixed(2);
+    html += '<div class="w3-container w3-right-align ">' + 
+        '<h5>Summa par precēm bez PVN ' + totalWithoutVat + '€<br>' + 
+        'PVN par precēm 21% ' + vat + '€<br>' +   
+        'Piegāde ' + deliveryPrice + '€<br>' +  
+        'Summa apmaksai ar PVN ' + (deliveryPrice + totalAmount).toFixed(2) + '€<br>' +  
+        '</h5></div>';
+    
+    html += "<h2>Pasūtītājs</h2>" + 
+        '<p><b>Vārds, uzvārds:</b>' +  clientName.value + '</p>' +     
+        '<p><b>Epasts:</b>' +  clientEmail.value + '</p>' +     
+        '<p><b>Telefons:</b>' +  clientPhone.value + '</p>';
+
+        html += "<h2>Piegāde</h2>" + 
+        '<p><b>Piegādes veids:</b>' +  deliveryService + '</p>' +     
+        '<p><b>Piegādes detaļas:</b>' +  deliveryDetails + '</p>';     
+
+    order.innerHTML = html;
+
+    
+    hideElement("orderPersInfo");
+    hideElement("orderDelivery");
+    hideElement("orderConfirm");
+    showElement("order");
 }
 
 function getOmnivaLocations() {
