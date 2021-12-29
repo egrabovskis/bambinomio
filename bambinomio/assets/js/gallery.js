@@ -32,11 +32,13 @@ function galleryShow(n, product) {
   dots[n - 1].className += " w3-white";
 }
 
-function generateGallery2(idBigPicture, idListThumbmails, idSizes, idBasketButton, data) {
+function generateGallery2(idBigPicture, idListThumbmails, idListThumbmailsSmall, idSizes, idBasketButton, data) {
   let bigPic = document.getElementById(idBigPicture);
-  if (!bigPic) return;   // by first call of functiona data are not laoded yet
+  if (!bigPic) return;   // by first call of functiona data are not loaded yet
+
+  // thumbnails for big screen
   let thumbnails = document.getElementById(idListThumbmails);
-  thumbnails.innerHTML = "";
+  thumbnails.innerHTML = "<p>Lai izvēlētos krāsu, izvēlēties atbilstošo attēlu</p>";
   for (let i = 0; i < data.colors.length; i++) {
     let div = document.createElement("div");
     div.className = "w3-quarter";
@@ -49,6 +51,20 @@ function generateGallery2(idBigPicture, idListThumbmails, idSizes, idBasketButto
 
     div.appendChild(img);
     thumbnails.appendChild(div);
+  }
+
+  // thumbnails for small and medium screen
+  let thumbnailsSmall = document.getElementById(idListThumbmailsSmall);
+  thumbnailsSmall.innerHTML = "Lai izvēlētos krāsu, izvēlēties atbilstošo attēlu";
+  for (let i = 0; i < data.colors.length; i++) {
+    let img = document.createElement("img");
+    img.className = "w3-opacity w3-hover-opacity-off w3-round w3-margin";
+    img.src = data.colors[i].img;
+    img.style.width = "25%";
+    img.style.cursor = "pointer;"
+    img.onclick = function () { showGalleryImage2(i, idBigPicture, idSizes, idBasketButton, data); };
+
+    thumbnailsSmall.appendChild(img);
   }
   showGalleryImage2(0, idBigPicture, idSizes, idBasketButton, data);  // show first picture
 }
@@ -102,12 +118,12 @@ function showGalleryImage2(n, idBigPicture, idSizes, idBasketButton, data) {
 
   // modify basket button
   let basketButton = document.getElementById(idBasketButton);
-  basketButton.onclick = function () { 
+  basketButton.onclick = function () {
     addToBasket(
       data.id,
       data.colors[n].img,
       data.name + " " + data.colors[n].name + " " + sizes.value,
-      data.price ); 
+      data.price);
   };
 
 }
