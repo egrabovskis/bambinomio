@@ -19,12 +19,13 @@ function addToBasket(id, img, name, price,) {
     for (var i = 0; i < baskeButtons.length; i++) {
         baskeButtons[i].className += " w3-show";
     }
+    showBasket();
 }
 
 function deleteFromBasket(n) {
     // delete n-th element from array basketData
     basketData.splice(n, 1);
-    showBasket(basketData);
+    showBasket();
 }
 
 function changeCountInbasketBasket(n, modifier) {
@@ -33,10 +34,10 @@ function changeCountInbasketBasket(n, modifier) {
     if (basketData[n]["count"] < 1) {
         basketData[n]["count"] = 1;
     }
-    showBasket(basketData);
+    showBasket();
 }
 
-function showBasket(data) {
+function showBasket() {
     const basketTable = document.getElementById("basketTable");
     const basketTableForShow = document.createElement("table");
     basketTableForShow.className = "w3-table-all";
@@ -46,8 +47,8 @@ function showBasket(data) {
     // EXTRACT VALUE FOR HTML HEADER. 
     // ('id', "img" 'name', "count", 'price',)
     var col = [];
-    for (var i = 0; i < data.length; i++) {
-        for (var key in data[i]) {
+    for (var i = 0; i < basketData.length; i++) {
+        for (var key in basketData[i]) {
             if (col.indexOf(key) === -1) {
                 col.push(key);
             }
@@ -78,15 +79,15 @@ function showBasket(data) {
     basketTableForShow.appendChild(tr);
 
     // append data
-    for (let i = 0; i < data.length; i++) {
+    for (let i = 0; i < basketData.length; i++) {
         tr = basketTableForShow.insertRow(); // insert row at table end
-        totalAmount += data[i]["price"] * data[i]["count"];
-        totalCount = totalCount + data[i]["count"];
+        totalAmount += basketData[i]["price"] * basketData[i]["count"];
+        totalCount = totalCount + basketData[i]["count"];
         for (let j = 1; j < col.length; j++) {
             let tabCell = tr.insertCell();
             if (j === 1) { // first row contains picture
                 productPicture = document.createElement("img");
-                productPicture.src = data[i][col[j]];
+                productPicture.src = basketData[i][col[j]];
                 productPicture.style.width = "30%";
                 tabCell.appendChild(productPicture);
             } else if (j === 3) { // quantity
@@ -95,12 +96,12 @@ function showBasket(data) {
                 let html =
                     '<table class="w3-table"><tr>' +
                     '<td><button onclick="' + callString + ', -1);">-</button></td>' +
-                    '<td><input id="' + quantityId + '" type="number" min=1 value="' + data[i]["count"] + '" style="max-width:40px" readonly></td>' +
+                    '<td><input id="' + quantityId + '" type="number" min=1 value="' + basketData[i]["count"] + '" style="max-width:40px" readonly></td>' +
                     '<td><button onclick="' + callString + ', 1);">+</button></td>' +
                     "</tr></table>"
                 tabCell.innerHTML = html;
             } else {
-                tabCell.innerHTML = data[i][col[j]];
+                tabCell.innerHTML = basketData[i][col[j]];
             }
         }
         tabCell = tr.insertCell();
@@ -126,10 +127,7 @@ function showBasket(data) {
     document.getElementById("vat").innerHTML = vat;
     document.getElementById("totalAmount").innerHTML = totalAmount;
 
-    handleDeliveryClick(this); // show selected delivery fields
-    // make basket visible
-    var b = document.getElementById("basket");
-    b.className += " w3-show";
+    showElement("basket");
 }
 
 function handleDeliveryClick(myRadio) {
@@ -152,6 +150,22 @@ function handleDeliveryClick(myRadio) {
     }
 }
 
+function restoreDelivery() {
+    // hack for refreshed radioButtons when order is being edited
+    let checkedElement;
+    if (deliveryService == "OMNIVA") {
+        checkedElement = document.getElementById("deliveryOmniva");
+    } else if (deliveryService == "Latvijas pasts") {
+        checkedElement = document.getElementById("deliveryLP");
+    } else if (deliveryService == "Kurjers") {
+        checkedElement = document.getElementById("deliveryCourier");
+    }
+    if (checkedElement) {
+        checkedElement.checked = true;
+        handleDeliveryClick(checkedElement);
+    }
+}
+
 function checkPrivateData() {
     clientName = document.getElementById("clientName");
     clientEmail = document.getElementById("clientEmail");
@@ -166,7 +180,7 @@ function checkPrivateData() {
     } else {
         hideElement("checkPrivateDataButton");
         showElement("orderDelivery");
-        showElement("orderConfirm");
+        showElement("orderReview");
     }
 }
 
@@ -192,7 +206,7 @@ function checkOrder() {
     const deliveryOmniva = document.getElementById("deliveryOmniva");
     const omnivaLocationList = document.getElementById("omnivaLocationList");
     if (deliveryOmniva.checked) {
-        if ( omnivaLocationList.value == 'Izvēlieties Omniva Pakomātu') {
+        if (omnivaLocationList.value == 'Izvēlieties Omniva Pakomātu') {
             alert("Izvēlieties Omniva pakomātu")
             omnivaLocationList.focus();
             return;
@@ -212,11 +226,11 @@ function checkOrder() {
         } else if (!lpAddress2.reportValidity()) {
             lpAddress2.focus();
             return;
-        } if (!lpAddress1.reportValidity()) {
+        } if (!lpAddress3.reportValidity()) {
             lpAddress3.focus();
             return;
         }
-        deliveryDetails = lpAddress1.value  + " " + lpAddress2.value + " " + lpAddress3.value;
+        deliveryDetails = lpAddress1.value + " " + lpAddress2.value + " " + lpAddress3.value;
     } else if (deliveryCourier.checked) {
         deliveryService = "Kurjers";
         deliveryPrice = 5;
@@ -234,7 +248,7 @@ function showOrder() {
     let totalAmount = 0;
     let totalCount = 0;
     const order = document.getElementById("order");
-    let html = "<h2>Pasūtījums</h2>" +
+    orderHtml = "<h2>Pasūtījums</h2>" +
         '<table class="w3-table-all">' +
         "<tr><th>Attēls</th>" +
         "<th>Prece</th>" +
@@ -242,47 +256,70 @@ function showOrder() {
         "<th>Cena par 1gab.</th>" +
         "<th>Kopējā cena</th></tr>";
     basketData.forEach(function (item, index) {
-        console.log(item, index);
-        html += '<tr><td><img src="' + item.img + '" style="width:30%"></td>' +
-        "<td>" + item.name + "</td>" +
-        "<td>" + item.count + "</td>" +
-        "<td>" + item.price + "€</td>" +
-        "<td>" + (item.price * item.count).toFixed(2) + "€</td></tr>" 
+        orderHtml += '<tr><td><img src="' + item.img + '" style="width:30%"></td>' +
+            "<td>" + item.name + "</td>" +
+            "<td>" + item.count + "</td>" +
+            "<td>" + item.price + "€</td>" +
+            "<td>" + (item.price * item.count).toFixed(2) + "€</td></tr>"
         totalAmount += item.price * item.count;
         totalCount = totalCount + item.count;
     })
-    html += '<tr><td></td>' +
-    "<td>Kopā</td>" +
-    "<td>" + totalCount + "</td>" +
-    "<td></td>" +
-    "<td>" + totalAmount.toFixed(2) + "€</td></tr>" 
-    html += "</table>";
+    orderHtml += '<tr><td></td>' +
+        "<td>Kopā</td>" +
+        "<td>" + totalCount + "</td>" +
+        "<td></td>" +
+        "<td>" + totalAmount.toFixed(2) + "€</td></tr>"
+    orderHtml += "</table>";
 
     let vat = (totalAmount * 0.21).toFixed(2);
     let totalWithoutVat = (totalAmount - vat).toFixed(2);
-    html += '<div class="w3-container w3-right-align ">' + 
-        '<h5>Summa par precēm bez PVN ' + totalWithoutVat + '€<br>' + 
-        'PVN par precēm 21% ' + vat + '€<br>' +   
-        'Piegāde ' + deliveryPrice + '€<br>' +  
-        'Summa apmaksai ar PVN ' + (deliveryPrice + totalAmount).toFixed(2) + '€<br>' +  
+    orderHtml += '<div class="w3-container w3-right-align ">' +
+        '<h5>Summa par precēm bez PVN ' + totalWithoutVat + '€<br>' +
+        'PVN par precēm 21% ' + vat + '€<br>' +
+        'Piegāde ' + deliveryPrice + '€<br>' +
+        'Summa apmaksai ar PVN ' + (deliveryPrice + totalAmount).toFixed(2) + '€<br>' +
         '</h5></div>';
-    
-    html += "<h2>Pasūtītājs</h2>" + 
-        '<p><b>Vārds, uzvārds:</b>' +  clientName.value + '</p>' +     
-        '<p><b>Epasts:</b>' +  clientEmail.value + '</p>' +     
-        '<p><b>Telefons:</b>' +  clientPhone.value + '</p>';
 
-        html += "<h2>Piegāde</h2>" + 
-        '<p><b>Piegādes veids:</b>' +  deliveryService + '</p>' +     
-        '<p><b>Piegādes detaļas:</b>' +  deliveryDetails + '</p>';     
+    orderHtml += "<h2>Pasūtītājs</h2>" +
+        '<p><b>Vārds, uzvārds:</b>' + clientName.value + '</p>' +
+        '<p><b>Epasts:</b>' + clientEmail.value + '</p>' +
+        '<p><b>Telefons:</b>' + clientPhone.value + '</p>';
 
-    order.innerHTML = html;
+    orderHtml += "<h2>Piegāde</h2>" +
+        '<p><b>Piegādes veids:</b>' + deliveryService + '</p>' +
+        '<p><b>Piegādes detaļas:</b>' + deliveryDetails + '</p>';
 
-    
+    order.innerHTML = orderHtml;
+
+
     hideElement("orderPersInfo");
     hideElement("orderDelivery");
-    hideElement("orderConfirm");
+    hideElement("orderReview");
     showElement("order");
+    showElement("orderConfirm");
+}
+
+function emailOrder() {
+    // placeholder, todo: implement it in PHP
+    alert("šeit tiks sūtīts e-pasts:" + orderHtml);
+    location.reload();
+}
+
+function editOrder() {
+    hideElement("orderPersInfo");
+    hideElement("orderDelivery");
+    hideElement("orderReview");
+    hideElement("order");
+    hideElement("orderConfirm");
+    w3.hideElement(document.getElementById('orderBlock'));
+    showElement("basket");
+    restoreDelivery();
+}
+
+function createOrder() {
+    w3.showElement(document.getElementById('orderBlock'));
+    showElement("orderPersInfo");
+    showElement("checkPrivateDataButton");
 }
 
 function getOmnivaLocations() {
