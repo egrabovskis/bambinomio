@@ -36,7 +36,7 @@
             <div class="w3-bar-item" style="float:none;overflow:hidden;">
                 <div class="w3-bar ">
 
-                    <a href="#basket" class="w3-btn w3-right" onclick="showBasket(basketData)">
+                    <a href="#basket" class="w3-btn w3-right" onclick="showBasket()">
                         <h6><i class="w3-right-align fa fa-shopping-cart" aria-hidden="true"></i> Grozs<br></h6>
                     </a>
 
@@ -80,7 +80,7 @@
         var basketData = [];
         var deliveryPrice = 0;
         var clientName, clientEmail, clientPhone;
-        var deliveryService, deliveryDetails;
+        var deliveryService, deliveryDetails, orderHtml;
         includeHTML();
         w3.hide('.basketButton');
 
