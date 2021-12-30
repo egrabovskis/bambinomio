@@ -28,9 +28,9 @@ function includeHTML() {
       xhttp.open("GET", file, true);
       xhttp.send();
 
-      generateGallery2("swimnappy-current", "swimnappies-list", "swimNapiesSizes", "swimNapiesBasketButton", swimNappiesData);
-      generateGallery2("miosoft-current", "miosoft-list", "mioSoftSizes", "mioSoftBasketButton", mioSoftData);
-      generateGallery2("miosolo-current", "miosolo-list", "mioSoloSizes", "mioSoloBasketButton", mioSoloData);
+      generateGallery2("swimnappy-current", "swimnappies-list", "swimnappies-list-small","swimNapiesSizes", "swimNapiesBasketButton", swimNappiesData);
+      generateGallery2("miosoft-current", "miosoft-list", "miosoft-list-small", "mioSoftSizes", "mioSoftBasketButton", mioSoftData);
+      generateGallery2("miosolo-current", "miosolo-list", "miosolo-list-small", "mioSoloSizes", "mioSoloBasketButton", mioSoloData);
 
       /*exit the function:*/
       return;
