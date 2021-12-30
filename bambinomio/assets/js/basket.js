@@ -38,6 +38,7 @@ function changeCountInbasketBasket(n, modifier) {
 }
 
 function showBasket() {
+
     const basketTable = document.getElementById("basketTable");
     const basketTableForShow = document.createElement("table");
     basketTableForShow.className = "w3-table-all";
@@ -128,6 +129,13 @@ function showBasket() {
     document.getElementById("totalAmount").innerHTML = totalAmount;
 
     showElement("basket");
+    // finally we add number to basket icon
+    const cartItemCount = document.getElementById("cartItemCount");
+    if (totalCount > 0) {
+        cartItemCount.textContent = totalCount;
+    } else {
+        cartItemCount.textContent = "";
+    }
 }
 
 function handleDeliveryClick(myRadio) {
