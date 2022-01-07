@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<div id="pulveris1" class="w3-padding-large w3-white w3-card-4 w3-margin">
+  <script>galleryCounters.set("pulveris1", 1);</script>
+
+  <div class="w3-row">
+    <div class="w3-container w3-twothird">
+      <h2 style="text-align:center;">Mio Care - Veļas mazgājamais līdzeklis</h2>
+      <ul class=" w3-ul w3-justify">
+        <li> Mio Care jauns veļas pulveris kā lieliska alternatīva citiem veļas pulveriem </li>
+        <li> hipoalerģisks un enzīmus nesaturošs, īpaši draudzīgs jūsu mazuļa maigajai ādai</li>
+        <li> ekonomiskāks par visiem vadošajiem veļas pulveru zīmoliem</li>
+        <li> pilnībā biosairstošs un atbilst ES normatīvu augstiem standartiem</li>
+        <li> nesatur hlora balinātāja reaģentus un garantē minimālu ietekmi uz vidi </li>
+        <li> nesatur fosfātus </li>
+        <li> bez smaržvielām </li>
+        <li> nav testēts uz dzīvniekiem </li>
+        <li> iepakojumā - 800g </li>
+      </ul>
+  
+      <div class="w3-container">
+        <div class="w3-panel w3-border w3-light-grey w3-round-large w3-left-align">
+
+        </div>
+      </div>
+      <button class="w3-btn w3-block w3-theme-d3"
+        onclick="addToBasket('pulveris1','assets/img/pulveris3/pulveris1.jpg','Mio Care - Veļas mazgājamais līdzeklis', simpleProductPrices['pulveris1'], );">Pievienot grozam</button>
+    </div>
+
+    <div class="w3-container w3-third">
+      <div class="w3-content w3-display-container" style="max-width:800px">
+        <img class="pulveris1Slides" src="assets/img/pulveris3/pulveris1.jpg" style="width:100%">
+        <img class="pulveris1Slides" src="assets/img/pulveris3/pulveris2.jpg" style="width:100%; display:none">
+        <div class="w3-center w3-container w3-section w3-transparent w3-display-bottommiddle w3-xxlarge"
+          style="width:100%">
+          <div class="w3-left w3-hover-theme:hover" onclick="galleryNext(-1, 'pulveris1')">&#10094;</div>
+          <div class="w3-right w3-hover-theme:hover" onclick="galleryNext(1, 'pulveris1')">&#10095;</div>
+          <span class="w3-badge dots-pulveris1 w3-border w3-transparent w3-hover-white "
+            onclick="galleryShow(1, 'pulveris1')"></span>
+          <span class="w3-badge dots-pulveris1 w3-border w3-transparent w3-hover-white"
+            onclick="galleryShow(2, 'pulveris1')"></span>
+        </div>
+      </div>
+
+      <!-- price will be loaded from simpleProductPrices -->
+      <h1 id="pulveris1Price" class="new-price"></h1>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById("pulveris1Price").innerHTML = simpleProductPrices["pulveris1"] + "€";
+</script>

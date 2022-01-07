@@ -6,5 +6,6 @@ var simpleProductPrices =
     "miofresh_750": 11.11,
     "miofresh_300": 6.66,
     "mioduo_2": 2.22,
-    "mioduo_4": 4.44
+    "mioduo_4": 4.44,
+    "pulveris1": 5.55
 }
