@@ -6,5 +6,10 @@ var simpleProductPrices =
     "miofresh_300": 5.99,
     "mioduo_2": 14.99,
     "mioduo_4": 29.99,
-    "pulveris1": 8.99
+    "pulveris1": 8.99,
+    "potty": 13.99,
+    "mioseal": 13.99,
+    "miostep": 13.99
+
+    
 }

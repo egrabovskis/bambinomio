@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<div id="miostep" class="w3-padding-large w3-white w3-card-4 w3-margin">
+    <script>galleryCounters.set("miostep", 1);</script>
+
+    <div class="w3-row">
+        <div class="w3-container w3-twothird">
+            <h2 style="text-align:center;"> Mio Step - Pakāpiens</h2>
+            <ul class=" w3-ul w3-justify">
+
+
+                <li> Pakāpiens - soliņš ir mūsdienīgs risinājums jūsu bērnam, kad tas ir nolēmis lietot patstāvīgi
+                    tualeti un izlietni. Pateicoties, vieglajam materiālam, pakāpienu var pārvietot pats bērns. </li>
+                - Viegls, stabils <br>
+                - Ērts rokturis mugurpusē <br>
+                - Viegli kopjams <br>
+                - Virsma ir veidota ar rievainu pārklājumu, kas nodrošina stabilitāti zem kājiņām <br>
+                - Pamatnē iestrādāta pretslīde gumija, kas nodrošina labu stabilitāti uz grīdas<br>
+                -Izturīgs un praktisks, kļūst par labu palīglīdzekli pieaugušo pasaules iepazīšanai<br>
+                Izgatavots no augstas kvalitātes, 100% plastmasas
+            </ul>
+
+            <div class="w3-container">
+                <div class="w3-panel w3-light-grey w3-round-large w3-left-align">
+
+                </div>
+            </div>
+            <button class="w3-btn w3-block w3-theme-d3"
+                onclick="addToBasket('miostep','assets/img/miostep/','Mio Step - Pakāpiens', simpleProductPrices['miostep'], );">Pievienot
+                grozam</button>
+        </div>
+
+        <div class="w3-container w3-third">
+            <div class="w3-content w3-display-container" style="max-width:800px">
+                <img class="miostepSlides" src="assets/img/miostep/miostep-step-stool_720x.jpg" style="width:100%">
+                <img class="miostepSlides" src="assets/img/miostep/potty-training-lifestyle_1_900x.jpg"
+                    style="width:100%; display:none">
+                <div class="w3-center w3-container w3-section w3-transparent w3-display-bottommiddle w3-xxlarge"
+                    style="width:100%">
+                    <div class="w3-left w3-hover-theme:hover" onclick="galleryNext(-1, 'miostep')">&#10094;</div>
+                    <div class="w3-right w3-hover-theme:hover" onclick="galleryNext(1, 'miostep')">&#10095;</div>
+                    <span class="w3-badge dots-miostep w3-border w3-transparent w3-hover-white "
+                        onclick="galleryShow(1, 'miostep')"></span>
+                    <span class="w3-badge dots-miostep w3-border w3-transparent w3-hover-white"
+                        onclick="galleryShow(2, 'miostep')"></span>
+                </div>
+            </div>
+
+            <!-- price will be loaded from simpleProductPrices -->
+            <h1 id="miostepPrice" class="new-price"></h1>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("miostepPrice").innerHTML = simpleProductPrices["miostep"] + "€";
+</script>
