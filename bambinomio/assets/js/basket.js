@@ -309,6 +309,15 @@ function showOrder() {
 
 function emailOrder() {
     // placeholder, todo: implement it in PHP
+    fetch('sutit.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'text/html; charset=UTF-8'
+        },
+        body: "msg=" + orderHtml + "&from=a@b.c"
+    })
+        .then(response => response.text())
+        .then(data => alert("response from php:" + data));
     alert("šeit tiks sūtīts e-pasts:" + orderHtml);
     location.reload();
 }
