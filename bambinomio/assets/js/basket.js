@@ -116,7 +116,7 @@ function showBasket() {
         // tabCell.innerHTML = '<i class="fa fa-trash-o" aria-hidden="true"></i>';
     }
 
-    let vat = (totalAmount * 0.21).toFixed(2);
+    let vat = (totalAmount / 121 * 21).toFixed(2);
     totalAmount = totalAmount.toFixed(2);
     totalWithoutVat = (totalAmount - vat).toFixed(2);
 
@@ -279,7 +279,7 @@ function showOrder() {
         "<td style='text-align: right;'>" + totalAmount.toFixed(2) + "€</td></tr>"
     orderHtml += "</table>";
 
-    let vat = (totalAmount * 0.21).toFixed(2);
+    let vat = (totalAmount / 121 * 21).toFixed(2);
     let totalWithoutVat = (totalAmount - vat).toFixed(2);
     // style used below because  w3-right-align did not work on HTML Email
     orderHtml += '<div class="w3-container w3-right-align" style="text-align: right;">' +
