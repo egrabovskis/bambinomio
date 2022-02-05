@@ -266,27 +266,28 @@ function showOrder() {
     basketData.forEach(function (item, index) {
         orderHtml += '<tr><td><img src="' + item.img + '" style="width:30%"></td>' +
             "<td>" + item.name + "</td>" +
-            "<td>" + item.count + "</td>" +
-            "<td>" + item.price + "€</td>" +
-            "<td>" + (item.price * item.count).toFixed(2) + "€</td></tr>"
+            "<td style='text-align: right;'>" + item.count + "</td>" +
+            "<td style='text-align: right;'>" + item.price + "€</td>" +
+            "<td style='text-align: right;'>" + (item.price * item.count).toFixed(2) + "€</td></tr>"
         totalAmount += item.price * item.count;
         totalCount = totalCount + item.count;
     })
     orderHtml += '<tr><td></td>' +
         "<td>Kopā</td>" +
-        "<td>" + totalCount + "</td>" +
+        "<td  style='text-align: right;'>" + totalCount + "</td>" +
         "<td></td>" +
-        "<td>" + totalAmount.toFixed(2) + "€</td></tr>"
+        "<td style='text-align: right;'>" + totalAmount.toFixed(2) + "€</td></tr>"
     orderHtml += "</table>";
 
     let vat = (totalAmount * 0.21).toFixed(2);
     let totalWithoutVat = (totalAmount - vat).toFixed(2);
-    orderHtml += '<div class="w3-container w3-right-align ">' +
-        '<h5>Summa par precēm bez PVN ' + totalWithoutVat + '€<br>' +
+    // style used below because  w3-right-align did not work on HTML Email
+    orderHtml += '<div class="w3-container w3-right-align" style="text-align: right;">' +
+        '<br><h6>Summa par precēm bez PVN ' + totalWithoutVat + '€<br>' +
         'PVN par precēm 21% ' + vat + '€<br>' +
         'Piegāde ' + deliveryPrice + '€<br>' +
         'Summa apmaksai ar PVN ' + (deliveryPrice + totalAmount).toFixed(2) + '€<br>' +
-        '</h5></div>';
+        '</h6></div></div>';
 
     orderHtml += "<h2>Pasūtītājs</h2>" +
         '<p><b>Vārds, uzvārds:</b>' + clientName.value + '</p>' +
@@ -310,15 +311,14 @@ function showOrder() {
 function emailOrder() {
     // placeholder, todo: implement it in PHP
     orderHtml = `<html><body>${orderHtml}</body></html>`
-    fetch(`sutit.php?msg=${orderHtml}&from=a@b.c`, {
+    fetch(`sutit.php?msg=${orderHtml}&from=${clientEmail.value}`, {
         method: 'GET',
         headers: {
-            'Content-Type': 'text/html'
+            'Content-Type': 'text/html; charset=UTF-8'
         },
     })
         .then(response => response.text())
-        .then(data => alert("response from php:" + data));
-    alert("šeit tiks sūtīts e-pasts:" + orderHtml);
+    // .then(data => alert("response from php:" + data));
     location.reload();
 }
 
