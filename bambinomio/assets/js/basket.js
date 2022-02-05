@@ -101,6 +101,8 @@ function showBasket() {
                     '<td><button onclick="' + callString + ', 1);">+</button></td>' +
                     "</tr></table>"
                 tabCell.innerHTML = html;
+            } else if (j === 4) { // price
+                tabCell.innerHTML = basketData[i][col[j]].toFixed(2);
             } else {
                 tabCell.innerHTML = basketData[i][col[j]];
             }
@@ -267,7 +269,7 @@ function showOrder() {
         orderHtml += '<tr><td><img src="' + item.img + '" style="width:30%"></td>' +
             "<td>" + item.name + "</td>" +
             "<td style='text-align: right;'>" + item.count + "</td>" +
-            "<td style='text-align: right;'>" + item.price + "€</td>" +
+            "<td style='text-align: right;'>" + item.price.toFixed(2) + "€</td>" +
             "<td style='text-align: right;'>" + (item.price * item.count).toFixed(2) + "€</td></tr>"
         totalAmount += item.price * item.count;
         totalCount = totalCount + item.count;
