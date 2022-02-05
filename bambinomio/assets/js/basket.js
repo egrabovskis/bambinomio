@@ -309,12 +309,12 @@ function showOrder() {
 
 function emailOrder() {
     // placeholder, todo: implement it in PHP
-    fetch('sutit.php', {
-        method: 'POST',
+    orderHtml = `<html><body>${orderHtml}</body></html>`
+    fetch(`sutit.php?msg=${orderHtml}&from=a@b.c`, {
+        method: 'GET',
         headers: {
-            'Content-Type': 'text/html; charset=UTF-8'
+            'Content-Type': 'text/html'
         },
-        body: "msg=" + orderHtml + "&from=a@b.c"
     })
         .then(response => response.text())
         .then(data => alert("response from php:" + data));
