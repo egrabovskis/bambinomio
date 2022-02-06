@@ -5,15 +5,15 @@
         <div class="w3-container w3-half">
             <h2 style="text-align:center;">Swim nappy - Peldbiksītes</h2>
             <ul class=" w3-ul w3-justify">
-
-                <li>Vairākums peldbaseinu higiēnisku apsvērumu dēļ liedz mazuļiem peldēties kailiem. Parastie peldtērpi
-                    nepiedāvā nekādu aizsardzību, bet citas autiņbiksītes uzsūc ūdeni un padara autiņu smagu.<br>
-                    Swim nappies ir lieliska alternatīva parastajiem peldtērpiem un autiņiem ūdenī. Tiem ir
-                    ūdensnecaurlaidīgs iekšējais slānis, hermētiska jostiņa un kāju aproces.</li>
-
+                <li>Vairākums peldbaseinu higiēnisku apsvērumu dēļ liedz mazuļiem peldēties
+                    kailiem. Parastie peldtērpi nepiedāvā nekādu aizsardzību, bet citas
+                    autiņbiksītes uzsūc ūdeni un padara autiņu smagu.
+                    Swim nappies ir lieliska alternatīva parastajiem peldtērpiem un autiņiem
+                    ūdenī. Tiem ir ūdensnecaurlaidīgs iekšējais slānis, hermētiska jostiņa un
+                    kāju aproces.</li>
                 -kokvilnas maisījuma oderējums mazuļa ādai ir mīksts un maigs<br>
                 -aiztur "negadījumus"<br>
-                -var mazgāt un žāvēt veļas mašīnā<br>
+                -var mazgāt un žāvēt veļas mašīnā
             </ul>
             <hr>
             <div class="w3-container w3-center">
@@ -27,7 +27,6 @@
                 <button id="swimNapiesBasketButton" class="w3-btn w3-block w3-theme-d3">Pievienot grozam</button>
             </div>
         </div>
-
         <div class="w3-container w3-half w3-row-padding w3-margin-top">
             <div id="swimnappy-current" class="w3-container w3-half">
             </div>
@@ -36,6 +35,12 @@
             <div id="swimnappies-list-small"
                 class="w3-container w3-half w3-row-padding w3-margin-top w3-hide-large w3-hide-medium">
             </div>
+            <h1 id="swimNappiesPrice" class="new-price"></h1>
         </div>
+
     </div>
 </div>
+
+<script>
+    document.getElementById("swimNappiesPrice").innerHTML = swimNappiesData["price"] + "€";
+</script>

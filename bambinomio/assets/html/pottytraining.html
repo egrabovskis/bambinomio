@@ -35,6 +35,11 @@
             <div id="pottytraining-list-small"
                 class="w3-container w3-half w3-row-padding w3-margin-top w3-hide-large  w3-hide-medium">
             </div>
+            <h1 id="pottyTrainingPrice" class="new-price"></h1>
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById("pottyTrainingPrice").innerHTML = pottyTrainingData["price"] + "€";
+</script>

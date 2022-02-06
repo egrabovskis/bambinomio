@@ -323,7 +323,9 @@ function emailOrder() {
     // .then(data => alert("response from php:" + data));
     location.reload();
 }
-
+function confirmation() {
+    alert("Pasūtījums ir apstiprināts. Jūs saņemsiet priekšapmaksas rēķinu uz norādīto e-pasta adresi 12 stundu laikā. ");
+  }
 function editOrder() {
     hideElement("orderPersInfo");
     hideElement("orderDelivery");
