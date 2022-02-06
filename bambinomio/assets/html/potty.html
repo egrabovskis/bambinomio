@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<div id="potty" class="w3-padding-large w3-white w3-card-4 w3-margin">
+<div id="potty" class="product">
     <script>galleryCounters.set("potty", 1);</script>
 
     <div class="w3-row">
@@ -27,8 +27,10 @@
         <div class="w3-container w3-third">
             <div class="w3-content w3-display-container" style="max-width:800px">
                 <img class="pottySlides" src="assets/img/potty/miopotty_720x.jpg" style="width:100%">
-                <img class="pottySlides" src="assets/img/potty/miopotty-lifestyle1_1_900x.jpg"  style="width:100%; display:none">
-                <img class="pottySlides" src="assets/img/potty/potty-training-lifestyle_2_900x.jpg" style="width:100%; display:none">
+                <img class="pottySlides" src="assets/img/potty/miopotty-lifestyle1_1_900x.jpg"
+                    style="width:100%; display:none">
+                <img class="pottySlides" src="assets/img/potty/potty-training-lifestyle_2_900x.jpg"
+                    style="width:100%; display:none">
 
                 <div class="w3-center w3-container w3-section w3-transparent w3-display-bottommiddle w3-xxlarge"
                     style="width:100%">
@@ -39,17 +41,17 @@
                         onclick="galleryShow(1, 'potty')"></span>
                     <span class="w3-badge dots-potty w3-border w3-transparent w3-hover-white"
                         onclick="galleryShow(2, 'potty')"></span>
-                        <span class="w3-badge dots-potty w3-border w3-transparent w3-hover-white"
+                    <span class="w3-badge dots-potty w3-border w3-transparent w3-hover-white"
                         onclick="galleryShow(3, 'potty')"></span>
                 </div>
             </div>
 
-                <!-- price will be loaded from simpleProductPrices -->
-                <h1 id="pottyPrice" class="new-price"></h1>
-            </div>
+            <!-- price will be loaded from simpleProductPrices -->
+            <h1 id="pottyPrice" class="new-price"></h1>
         </div>
     </div>
+</div>
 
-    <script>
-        document.getElementById("pottyPrice").innerHTML = simpleProductPrices["potty"] + "€";
-    </script>
+<script>
+    document.getElementById("pottyPrice").innerHTML = simpleProductPrices["potty"] + "€";
+</script>
