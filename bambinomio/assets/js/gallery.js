@@ -58,9 +58,9 @@ function generateGallery2(idBigPicture, idListThumbmails, idListThumbmailsSmall,
   thumbnailsSmall.innerHTML = "Lai izvēlētos krāsu, izvēlēties atbilstošo attēlu";
   for (let i = 0; i < data.colors.length; i++) {
     let img = document.createElement("img");
-    img.className = "w3-opacity w3-hover-opacity-off w3-round w3-margin";
+    img.className = "w3-opacity w3-hover-opacity-off w3-round";
     img.src = data.colors[i].img;
-    img.style.width = "25%";
+    img.style.width = "20%";
     img.style.cursor = "pointer;"
     img.onclick = function () { showGalleryImage2(i, idBigPicture, idSizes, idBasketButton, data); };
 
