@@ -312,7 +312,9 @@ function emailOrder() {
     alert("šeit tiks sūtīts e-pasts:" + orderHtml);
     location.reload();
 }
-
+function confirmation() {
+    alert("Pasūtījums ir apstiprināts. Jūs saņemsiet priekšapmaksas rēķinu uz norādīto e-pasta adresi 12 stundu laikā. ");
+  }
 function editOrder() {
     hideElement("orderPersInfo");
     hideElement("orderDelivery");
