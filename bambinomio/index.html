@@ -82,14 +82,14 @@
         <div w3-include-html="assets/html/deliveryinfo.html"></div>
         <div w3-include-html="assets/html/contacts.html"></div>
         <div w3-include-html="assets/html/privacy.html"></div>
-        
+
         <!-- basket-->
         <div w3-include-html="assets/html/order.html"></div>
     </div>
     <!-- footer -->
-        <div class="w3-container w3-theme-d3 w3-center">
-            <p>Copyright ©2022 EGEstudija SIA. All rights reserved.</p>
-        </div>
+    <div class="w3-container w3-theme-d3 w3-center">
+        <p>Copyright ©2022 EGEstudija SIA. All rights reserved.</p>
+    </div>
 
 
 
@@ -101,6 +101,19 @@
         var deliveryService, deliveryDetails, orderHtml;
         includeHTML();
         w3.hide('.basketButton');
+
+        window.addEventListener('popstate', function (event) {
+            let regexp = /.*\#(.*)$/mg;
+            let match = regexp.exec(window.location.href);
+            currentId = match[1];
+            // first remove paddingTop class from everywhere
+            const existingPaddingTops = document.getElementsByClassName("paddingTop");
+            for (let i = 0; i < existingPaddingTops.length; i++) {
+                existingPaddingTops[i].className.replace(" paddingTop", "");
+            }
+            currentElement = document.getElementById(currentId);
+            currentElement.className += " paddingTop";
+        });
     </script>
 
 </body>
