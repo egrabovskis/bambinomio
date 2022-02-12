@@ -19,13 +19,13 @@ function addToBasket(id, img, name, price,) {
     for (var i = 0; i < baskeButtons.length; i++) {
         baskeButtons[i].className += " w3-show";
     }
-    showBasket();
+    generateBasket();
 }
 
 function deleteFromBasket(n) {
     // delete n-th element from array basketData
     basketData.splice(n, 1);
-    showBasket();
+    generateBasket();
 }
 
 function changeCountInbasketBasket(n, modifier) {
@@ -34,16 +34,16 @@ function changeCountInbasketBasket(n, modifier) {
     if (basketData[n]["count"] < 1) {
         basketData[n]["count"] = 1;
     }
-    showBasket();
+    generateBasket();
 }
 
-function showBasket() {
+function generateBasket() {
 
     const basketTable = document.getElementById("basketTable");
     const basketTableForShow = document.createElement("table");
     basketTableForShow.className = "w3-table-all";
-    let totalAmount = 0;
-    let totalCount = 0;
+    totalAmount = 0;
+    totalCount = 0;
 
     // EXTRACT VALUE FOR HTML HEADER. 
     // ('id', "img" 'name', "count", 'price',)
@@ -90,6 +90,7 @@ function showBasket() {
                 productPicture = document.createElement("img");
                 productPicture.src = basketData[i][col[j]];
                 productPicture.style.width = "30%";
+                productPicture.style.minWidth = "80px";
                 tabCell.appendChild(productPicture);
             } else if (j === 3) { // quantity
                 let quantityId = "basketRow_" + i;
@@ -130,13 +131,18 @@ function showBasket() {
     document.getElementById("vat").innerHTML = vat;
     document.getElementById("totalAmount").innerHTML = totalAmount;
 
-    showElement("basket");
     // finally we add number to basket icon
     const cartItemCount = document.getElementById("cartItemCount");
     if (totalCount > 0) {
         cartItemCount.textContent = totalCount;
     } else {
         cartItemCount.textContent = "";
+    }
+}
+
+function showBasket() {
+    if (totalCount > 0) {
+        showElement("basket");
     }
 }
 
@@ -255,8 +261,8 @@ function checkOrder() {
 }
 
 function showOrder() {
-    let totalAmount = 0;
-    let totalCount = 0;
+    totalAmount = 0;
+    totalCount = 0;
     const order = document.getElementById("order");
     orderHtml = "<h2>Pasūtījums</h2>" +
         '<table class="w3-table-all">' +
@@ -266,7 +272,7 @@ function showOrder() {
         "<th>Cena par 1gab.</th>" +
         "<th>Kopējā cena</th></tr>";
     basketData.forEach(function (item, index) {
-        orderHtml += '<tr><td><img src="' + item.img + '" style="width:30%"></td>' +
+        orderHtml += '<tr><td><img src="' + item.img + '" style="width:30%;min-width:80px;"></td>' +
             "<td>" + item.name + "</td>" +
             "<td style='text-align: right;'>" + item.count + "</td>" +
             "<td style='text-align: right;'>" + item.price.toFixed(2) + "€</td>" +
@@ -325,7 +331,7 @@ function emailOrder() {
 }
 function confirmation() {
     alert("Pasūtījums ir apstiprināts. Jūs saņemsiet priekšapmaksas rēķinu uz norādīto e-pasta adresi 12 stundu laikā. ");
-  }
+}
 function editOrder() {
     hideElement("orderPersInfo");
     hideElement("orderDelivery");
