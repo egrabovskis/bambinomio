@@ -2,7 +2,7 @@ var swimNappiesData =
 {
     "id": "swimnappies",
     "name": "Swim diaper",
-    "price": 15.99,
+    "price": 18.20,
     "colors": [
         {
             "name": "All aboard",
