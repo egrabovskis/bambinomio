@@ -2,7 +2,7 @@ var mioSoftData =
 {
     "id": "miosoft",
     "name": "mio soft biksītes",
-    "price": 12.80,
+    "price": 20.10,
     "colors": [
         {
             "name": "Berry bounce",

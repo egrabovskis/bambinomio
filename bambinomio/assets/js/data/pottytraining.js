@@ -2,22 +2,22 @@ var pottyTrainingData =
 {
     "id": "pottytraining",
     "name": "Potty training - Podiņapmācības biksītes",
-    "price": 15.99,
+    "price": 15.20,
     "colors": [
         {
             "name": "Zebra cadabra",
             "img": "assets/img/pottytraining/potty-training-pants-zebra-cadabra-web_900x.jpg",
-            "sizes": [ "small"]
+            "sizes": [ "large"]
         },
         {
             "name": "White",
             "img": "assets/img/pottytraining/potty-training-pants-white-web_1_900x.jpg",
-            "sizes": ["medium", "small"]
-        },
+            "sizes": ["large", "medium"]
+        }, 
         {
             "name": "zemenes",
             "img": "assets/img/pottytraining/potty-training-pants-web_900x.jpg",
-            "sizes": ["medium", "small"]
+            "sizes": ["medium", "little"]
         },
         {
             "name": "tropical-island",

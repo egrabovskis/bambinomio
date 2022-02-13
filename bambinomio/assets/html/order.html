@@ -58,7 +58,13 @@
                                 oninput="this.setCustomValidity('')">
                         </div>
                     </div>
-                    <button id="checkPrivateDataButton" type="button" onclick="checkPrivateData();"
+
+                    <input id="privacyAgreement" class="w3-radio" type="radio" name="privacyAgreement"
+                     value="privacyAgreement" required checked>
+                    <label>Piekrītu privātuma politikai</label>
+
+                    <button id="checkPrivateDataButton" type="button"
+                        onclick="checkPrivateData();"
                         class="w3-button w3-block w3-section w3-ripple w3-padding w3-theme-d3 w3-hide w3-show">ievadīt
                         piegādes datus</button>
                 </div>

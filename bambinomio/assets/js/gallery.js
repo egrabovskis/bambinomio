@@ -115,20 +115,20 @@ function showGalleryImage2(n, idBigPicture, idSizes, idBasketButton, data) {
     sizeonesize.value = sizeonesize.text = "viena izmēra";
     sizes.appendChild(sizeonesize);
   }
-  if (data.colors[n].sizes.indexOf("littlesize") !== -1) {
-    let littlesize = document.createElement("option");
-    littlesize.value = littlesize.text = "18-24 mēneši (11-13 kg)";
-    sizes.appendChild(littlesize);
+  if (data.colors[n].sizes.indexOf("little") !== -1) {
+    let sizelittle = document.createElement("option");
+    sizelittle.value = sizelittle.text = "18-24 mēneši (11-13 kg)";
+    sizes.appendChild(sizelittle);
   }
-  if (data.colors[n].sizes.indexOf("mediumsize") !== -1) {
-    let mediumsize = document.createElement("option");
-    mediumsize.value = mediumsize.text = "2-3 gadi (13-16 kg); ";
-    sizes.appendChild(mediumsize);
-  }
-  if (data.colors[n].sizes.indexOf("largesize") !== -1) {
-    let largesize = document.createElement("option");
-    largesize.value = largesize.text = "3+ gadi (16+ kg)";
-    sizes.appendChild(largesize);
+  if (data.colors[n].sizes.indexOf("medium") !== -1) {
+    let sizemedium = document.createElement("option");
+    sizemedium.value = sizemedium.text = "2-3 gadi (13-16 kg); ";
+    sizes.appendChild(sizemedium);
+  } 
+  if (data.colors[n].sizes.indexOf("large") !== -1) {
+    let sizelarge = document.createElement("option");
+    sizelarge.value = sizelarge.text = "3+ gadi (16+ kg)";
+    sizes.appendChild(sizelarge);
   }
 
   // modify basket button

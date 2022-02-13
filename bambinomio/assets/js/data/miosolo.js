@@ -2,7 +2,7 @@ var mioSoloData =
 {
     "id": "miosolo",
     "name": "BambinoMio Miosolo vairākkārt lietojamās autiņbiksītes",
-    "price": 13.99,
+    "price": 34.90,
     "colors": [
         {
             "name": "berry bounce",
