@@ -38,7 +38,7 @@
             onclick="galleryShow(1, 'mioduo_2')"></span>
           <span class="w3-badge dots-mioduo_2 w3-border w3-transparent w3-hover-white"
             onclick="galleryShow(2, 'mioduo_2')"></span>
-            <span class="w3-badge dots-mioduo_2 w3-border w3-transparent w3-hover-white"
+          <span class="w3-badge dots-mioduo_2 w3-border w3-transparent w3-hover-white"
             onclick="galleryShow(3, 'mioduo_2')"></span>
         </div>
       </div>
@@ -51,5 +51,5 @@
 
 
 <script>
-  document.getElementById("mioduo_2Price").innerHTML = simpleProductPrices["mioduo_2"] + "€";
+  document.getElementById("mioduo_2Price").innerHTML = simpleProductPrices["mioduo_2"].toFixed(2) + "€";
 </script>

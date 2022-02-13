@@ -8,8 +8,8 @@ function ShowAndHidePrivacy() {
     }
 }
 
-function ShowAndHideDiliveryInfo() {
-    var x = document.getElementById('diliveryinfo');
+function ShowAndHidedeliveryinfo() {
+    var x = document.getElementById('deliveryinfo');
     if (x.style.display == 'none') {
         x.style.display = 'block';
     } else {
