@@ -1,5 +1,5 @@
 <?php
-$to = "valdis.prodnieks@bambinomio.lv";
+$to = "order@bambinomio.lv";
 $msg = $_GET['msg'];
 $from = $_GET['from'];
 $subject = "Jauns pasūtījums no " . $from;
