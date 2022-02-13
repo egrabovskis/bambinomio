@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <div id="deliveryinfo" class="product">
 
-    <button class="w3-left-align w3-block w3-theme-d3" onclick="ShowAndHidedeliveryinfo()">
+    <button class="w3-left-align w3-block w3-theme-d3" onclick="ShowAndHideDeliveryInfo()">
         <h3>Piegāde un apmaksa <i class="fa fa-caret-down" aria-hidden="true"></i></h3>
     </button>
-    <h3><b>Kā apmaksāt</b></h3><br>
-    <i class="fa fa-chevron-right" aria-hidden="true"></i>Pēc pasūtījuma formas aizpildīšanas uz Jūsu norādīto
-    e-pasta
-    adresi Jūs saņemsiet rēķinu ar visām nepieciešamām
-    detaļām Jūsu pasūtījuma apmaksai. Ja Jūs nesaņemat rēķinu, lūdzam uzmanīgi pārbaudīt Jūsu e-pasta spama sadaļu,
-    kā
-    arī norādītās e-pasta adreses pareizumu.<br>
+    <div id="deliveryInfo" style="display:none">
+        <h3><b>Kā apmaksāt</b></h3><br>
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>Pēc pasūtījuma formas aizpildīšanas uz Jūsu norādīto
+        e-pasta
+        adresi Jūs saņemsiet rēķinu ar visām nepieciešamām
+        detaļām Jūsu pasūtījuma apmaksai. Ja Jūs nesaņemat rēķinu, lūdzam uzmanīgi pārbaudīt Jūsu e-pasta spama sadaļu,
+        kā
+        arī norādītās e-pasta adreses pareizumu.<br>
 
-    <i class="fa fa-chevron-right" aria-hidden="true"></i>Pēc rēķina saņemšanas lūdzam apmaksāt to ar bankas
-    pārskaitījumu uz rēķinā norādītiem rekvizītiem 1 darba dienas
-    laikā. Ja pasūtījums nav apmaksāts dotajā laikā, tas tiks anulēts.<br>
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>Pēc rēķina saņemšanas lūdzam apmaksāt to ar bankas
+        pārskaitījumu uz rēķinā norādītiem rekvizītiem 1 darba dienas
+        laikā. Ja pasūtījums nav apmaksāts dotajā laikā, tas tiks anulēts.<br>
 
-    <i class="fa fa-chevron-right" aria-hidden="true"></i>Pēc maksājuma saņemšanas mūsu bankas kontā, mēs nosūtīsim
-    Jūsu
-    pasūtījumu atbilstoši izvēlētajam piegādes veidam.
-    Pasūtījums nevar būt apstrādāts, kamēr tas nav apmaksāts pilnā apmērā. Neskaidrību gadījumā mēs labprāt
-    atbildēsim
-    uz visiem Jūsu jautājumiem. Lūdzam sazināties ar mums pa tālruni +371 26415513 vai pa e-pastu
-    ege.studija@gmail.com<br>
-    <hr>
-    <h3><b>Piegāde</b></h3><br>
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>Pēc maksājuma saņemšanas mūsu bankas kontā, mēs nosūtīsim
+        Jūsu
+        pasūtījumu atbilstoši izvēlētajam piegādes veidam.
+        Pasūtījums nevar būt apstrādāts, kamēr tas nav apmaksāts pilnā apmērā. Neskaidrību gadījumā mēs labprāt
+        atbildēsim
+        uz visiem Jūsu jautājumiem. Lūdzam sazināties ar mums pa tālruni +371 26415513 vai pa e-pastu
+        ege.studija@gmail.com<br>
+        <hr>
+        <h3><b>Piegāde</b></h3><br>
 
-    <i class="fa fa-chevron-right" aria-hidden="true"></i>Piegāde uz Pasta stacija vai Omniva– piemērota tad, ja
-    nevēlaties gaidīt kurjeru konkrētā laikā vai neatrodaties Rīgas rajonā, vienkārši
-    izvēlaties šo piegādes veidu un norādiet, kurš tirdzniecības centrs no piedāvātajiem Jums ir visērtākais.<br>
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>Piegāde uz Pasta stacija vai Omniva– piemērota tad, ja
+        nevēlaties gaidīt kurjeru konkrētā laikā vai neatrodaties Rīgas rajonā, vienkārši
+        izvēlaties šo piegādes veidu un norādiet, kurš tirdzniecības centrs no piedāvātajiem Jums ir visērtākais.<br>
 
-    <i class="fa fa-chevron-right" aria-hidden="true"></i>Kā saņemt sūtījumu: Kad prece tiks piegādāta Jūsu
-    izvēlētajā
-    tirdzniecības centrā pasta stacijas terminālī Jūs
-    saņemsiet īsziņu uz savu tālruni. Pēc īsziņas saņemšanas dodieties uz Pasta stacijas terminālu vai uz Omniva
-    pakomātu. Ievadiet īsziņā seņemto kodu un izņemiet sūtījumu no atvērtā skapīša.<br>
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>Kā saņemt sūtījumu: Kad prece tiks piegādāta Jūsu
+        izvēlētajā
+        tirdzniecības centrā pasta stacijas terminālī Jūs
+        saņemsiet īsziņu uz savu tālruni. Pēc īsziņas saņemšanas dodieties uz Pasta stacijas terminālu vai uz Omniva
+        pakomātu. Ievadiet īsziņā seņemto kodu un izņemiet sūtījumu no atvērtā skapīša.<br>
 
-    <i class="fa fa-chevron-right" aria-hidden="true"></i>Kurjerpasta piegāde – piemērota tad, ja vēlaties preci
-    saņemt
-    savās mājās. Preces piegādes dienā kurjers piezvanīs
-    un informēs Jūs par pasūtījuma piegādes laiku.<br>
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>Kurjerpasta piegāde – piemērota tad, ja vēlaties preci
+        saņemt
+        savās mājās. Preces piegādes dienā kurjers piezvanīs
+        un informēs Jūs par pasūtījuma piegādes laiku.<br>
+    </div>
 </div>

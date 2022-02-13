@@ -8,7 +8,7 @@ function ShowAndHidePrivacy() {
     }
 }
 
-function ShowAndHidedeliveryinfo() {
+function ShowAndHideDeliveryInfo() {
     var x = document.getElementById('deliveryinfo');
     if (x.style.display == 'none') {
         x.style.display = 'block';
