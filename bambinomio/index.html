@@ -25,6 +25,7 @@
     <script src="assets/js/data/miosoft.js"></script>
     <script src="assets/js/data/miosolo.js"></script>
     <script src="assets/js/data/pottytraining.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6217VK4JXC"></script>
 </head>
 
 <body>
@@ -116,6 +117,14 @@
             currentElement = document.getElementById(currentId);
             currentElement.className += " paddingTop";
         });
+
+        //    Google analytics
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-6217VK4JXC');
     </script>
 
 </body>
